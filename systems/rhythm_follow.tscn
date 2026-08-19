@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cueo1q768ijsd"]
+
+[ext_resource type="Script" uid="uid://c22rydbo1vj6u" path="res://systems/rhythm_follow.gd" id="1_243t2"]
+
+[node name="rhythmFollow" type="Control" unique_id=349154114]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_243t2")
+
+[node name="track" type="ColorRect" parent="." unique_id=145506961]
+layout_mode = 0
+offset_right = 504.0
+offset_bottom = 203.0
+color = Color(0.5449743, 0.54497427, 0.54497427, 1)
+
+[node name="hitZone" type="ColorRect" parent="." unique_id=950859528]
+layout_mode = 0
+offset_left = 96.0
+offset_right = 101.0
+offset_bottom = 205.0
+color = Color(0.14044744, 0.14044744, 0.14044744, 1)
+
+[node name="pulse" type="Control" parent="." unique_id=1526115377]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
