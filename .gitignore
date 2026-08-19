@@ -1,0 +1,24 @@
+# Godot 4+ specific
+.godot/
+
+# Android build files
+/android/
+
+# Godot imported files
+*.import
+
+# Exported builds
+/export/
+*.apk
+*.aab
+*.exe
+*.pck
+*.zip
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE/editor files
+.vscode/
+.idea/

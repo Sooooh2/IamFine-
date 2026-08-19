@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://brcw2g2jfbgi6"]
+
+[ext_resource type="Script" uid="uid://d21xo21o55v2k" path="res://pattern_recog.gd" id="1_7fln1"]
+
+[node name="PatternRecog" type="Control" unique_id=2069198755]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7fln1")
+
+[node name="grid" type="HBoxContainer" parent="." unique_id=1968077915]
+layout_mode = 0
+offset_right = 421.0
+offset_bottom = 387.0
+
+[node name="col1" type="VBoxContainer" parent="grid" unique_id=984484990]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="c1" type="ColorRect" parent="grid/col1" unique_id=1262099692]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c2" type="ColorRect" parent="grid/col1" unique_id=1151325239]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c3" type="ColorRect" parent="grid/col1" unique_id=418604559]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c4" type="ColorRect" parent="grid/col1" unique_id=977363182]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c5" type="ColorRect" parent="grid/col1" unique_id=721441170]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="col2" type="VBoxContainer" parent="grid" unique_id=2075504815]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="c1" type="ColorRect" parent="grid/col2" unique_id=1291994201]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c2" type="ColorRect" parent="grid/col2" unique_id=502582459]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c3" type="ColorRect" parent="grid/col2" unique_id=429844590]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c4" type="ColorRect" parent="grid/col2" unique_id=2058692702]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c5" type="ColorRect" parent="grid/col2" unique_id=431840428]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="col3" type="VBoxContainer" parent="grid" unique_id=1529954948]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="c1" type="ColorRect" parent="grid/col3" unique_id=1688794660]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c2" type="ColorRect" parent="grid/col3" unique_id=1581595473]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c3" type="ColorRect" parent="grid/col3" unique_id=63252295]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c4" type="ColorRect" parent="grid/col3" unique_id=104268111]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c5" type="ColorRect" parent="grid/col3" unique_id=988756052]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="col4" type="VBoxContainer" parent="grid" unique_id=497415472]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="c1" type="ColorRect" parent="grid/col4" unique_id=768257759]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c2" type="ColorRect" parent="grid/col4" unique_id=1605070352]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c3" type="ColorRect" parent="grid/col4" unique_id=1227257102]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c4" type="ColorRect" parent="grid/col4" unique_id=794713888]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c5" type="ColorRect" parent="grid/col4" unique_id=2047265881]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="col5" type="VBoxContainer" parent="grid" unique_id=2126831253]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="c1" type="ColorRect" parent="grid/col5" unique_id=1740284939]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c2" type="ColorRect" parent="grid/col5" unique_id=2067649264]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c3" type="ColorRect" parent="grid/col5" unique_id=1614606097]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c4" type="ColorRect" parent="grid/col5" unique_id=1364980114]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c5" type="ColorRect" parent="grid/col5" unique_id=434768633]
+layout_mode = 2
+size_flags_vertical = 3
