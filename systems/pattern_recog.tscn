@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brcw2g2jfbgi6"]
 
-[ext_resource type="Script" uid="uid://d21xo21o55v2k" path="res://pattern_recog.gd" id="1_7fln1"]
+[ext_resource type="Script" uid="uid://d21xo21o55v2k" path="res://systems/pattern_recog.gd" id="1_7fln1"]
 
 [node name="PatternRecog" type="Control" unique_id=2069198755]
 layout_mode = 3

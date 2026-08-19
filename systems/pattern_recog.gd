@@ -3,6 +3,8 @@ extends Control
 
 # to increase speed of pattern as level goes on or anxiety and confidence go up and down 
 @onready var grid: HBoxContainer = $grid
+
+
 var sequence = []
 var player_seq = []
 

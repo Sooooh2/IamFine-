@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://1nkre7wn12dk"]
+
+[ext_resource type="PackedScene" uid="uid://cqkjv18tcngp7" path="res://systems/polling/client.tscn" id="1_76joj"]
+[ext_resource type="Script" uid="uid://cxtv458pfrdir" path="res://systems/polling/polling.gd" id="1_cab65"]
+[ext_resource type="PackedScene" uid="uid://dpobuiskdj5v3" path="res://systems/polling/server.tscn" id="2_78keg"]
+[ext_resource type="PackedScene" uid="uid://c6kjehd1pslf6" path="res://systems/polling/player.tscn" id="3_cab65"]
+[ext_resource type="PackedScene" uid="uid://cgkvoyuujogo3" path="res://systems/polling/dialogue.tscn" id="5_ucbku"]
+
+[node name="polling" type="Node2D" unique_id=1124342587]
+script = ExtResource("1_cab65")
+
+[node name="client" parent="." unique_id=1096268171 instance=ExtResource("1_76joj")]
+position = Vector2(206, 154)
+
+[node name="server" parent="." unique_id=703715 instance=ExtResource("2_78keg")]
+position = Vector2(168, 556)
+
+[node name="player" parent="." unique_id=1425308159 instance=ExtResource("3_cab65")]
+position = Vector2(472, 414)
+
+[node name="dialogue" parent="." unique_id=1851762449 instance=ExtResource("5_ucbku")]

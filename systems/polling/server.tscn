@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dpobuiskdj5v3"]
+
+[ext_resource type="Script" uid="uid://ddlujneqxd1t7" path="res://systems/polling/server.gd" id="1_3glrc"]
+[ext_resource type="Texture2D" uid="uid://d0hkqxcln20n0" path="res://icon.svg" id="2_1ceju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrycb"]
+size = Vector2(116, 116)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j10ms"]
+radius = 197.88127
+
+[node name="server" type="Node2D" unique_id=703715]
+script = ExtResource("1_3glrc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=432223729]
+modulate = Color(0.91527975, 5.1018596e-06, 0.5683081, 1)
+texture = ExtResource("2_1ceju")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=453993135]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1642307747]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_hrycb")
+
+[node name="interactionArea" type="Area2D" parent="." unique_id=1179886675]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactionArea" unique_id=1091371644]
+shape = SubResource("CircleShape2D_j10ms")
+
+[node name="Label" type="Label" parent="." unique_id=530534149]
+visible = false
+offset_left = 73.0
+offset_top = -50.0
+offset_right = 95.0
+offset_bottom = -27.0
+theme_override_colors/font_color = Color(0.12225223, 0.12225223, 0.12225223, 1)
+text = "[E]"

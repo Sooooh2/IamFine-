@@ -1,6 +1,7 @@
 extends Control
 
 @onready var pulses: Control = $pulse
+@onready var hit_zone: ColorRect = $hitZone
 
 var pulse_scene = preload("res://systems/pulse.tscn")
 var pulse_speed := 300.0
@@ -10,6 +11,8 @@ var number_of_pulses := 5
 
 var elapsed := 0.0
 var next_pulse := 0
+
+var hit_speed := 13.0
 
 
 func _ready():
@@ -39,6 +42,8 @@ func _process(delta):
 		if elapsed >= heartbeat[next_pulse]:
 			spawn_pulse()
 			next_pulse += 1
+	
+	hit_zone.position.x += hit_speed * delta
 
 
 func spawn_pulse():
