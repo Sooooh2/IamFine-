@@ -1,7 +1,45 @@
 [gd_scene format=3 uid="uid://cqkjv18tcngp7"]
 
 [ext_resource type="Script" uid="uid://c307wmfmyp3kp" path="res://client.gd" id="1_3ebcg"]
-[ext_resource type="Texture2D" uid="uid://d0hkqxcln20n0" path="res://icon.svg" id="2_w1jh3"]
+[ext_resource type="Texture2D" uid="uid://cgg2sw5g24gro" path="res://assets/npc1-Sheet.png" id="2_w1jh3"]
+
+[sub_resource type="Animation" id="Animation_w1jh3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("anim/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_udcad"]
+resource_name = "womanIdle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("anim/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0rf4b"]
+_data = {
+&"RESET": SubResource("Animation_w1jh3"),
+&"womanIdle": SubResource("Animation_udcad")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udcad"]
 size = Vector2(116, 116)
@@ -12,9 +50,17 @@ radius = 197.88127
 [node name="client" type="Node2D" unique_id=1096268171]
 script = ExtResource("1_3ebcg")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1715617672]
-modulate = Color(0.45838016, 0.59108996, 1, 1)
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1794235026]
+libraries/ = SubResource("AnimationLibrary_0rf4b")
+
+[node name="Sprite2D" type="Sprite2D" parent="anim" unique_id=1715617672]
+texture_filter = 1
+position = Vector2(202.00002, 148.00002)
+scale = Vector2(2.33, 2.33)
 texture = ExtResource("2_w1jh3")
+hframes = 6
+vframes = 3
+frame = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1121069317]
 

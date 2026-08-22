@@ -5,10 +5,12 @@ signal dialogue_requested(text)
 
 var first_interaction := true
 @onready var label: Label = $Label
+@onready var anim: AnimationPlayer = $anim
 
 
 func _ready():
 	label.visible = false
+	anim.play("womanIdle")
 	$interactionArea.body_entered.connect(_on_interaction_area_body_entered)
 	$interactionArea.body_exited.connect(_on_interaction_area_body_exited)
 
