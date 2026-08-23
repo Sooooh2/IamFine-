@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cqkjv18tcngp7"]
 
-[ext_resource type="Script" uid="uid://c307wmfmyp3kp" path="res://client.gd" id="1_3ebcg"]
-[ext_resource type="Texture2D" uid="uid://cgg2sw5g24gro" path="res://assets/npc1-Sheet.png" id="2_w1jh3"]
+[ext_resource type="Script" uid="uid://c307wmfmyp3kp" path="res://systems/polling/client.gd" id="1_3ebcg"]
+[ext_resource type="Texture2D" uid="uid://bc1ion380i5is" path="res://assets/npc1-Sheet.png" id="2_w1jh3"]
 
 [sub_resource type="Animation" id="Animation_w1jh3"]
 length = 0.001

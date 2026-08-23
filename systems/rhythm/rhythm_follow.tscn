@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cueo1q768ijsd"]
 
-[ext_resource type="Script" uid="uid://c22rydbo1vj6u" path="res://systems/rhythm_follow.gd" id="1_243t2"]
+[ext_resource type="Script" uid="uid://c22rydbo1vj6u" path="res://systems/rhythm/rhythm_follow.gd" id="1_243t2"]
 
 [node name="rhythmFollow" type="Control" unique_id=349154114]
 layout_mode = 3
