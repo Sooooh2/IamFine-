@@ -11,7 +11,6 @@ func show_msg(message: String):
 
 	label.text = message
 	label.visible = true
-
 	timer.start()
 
 

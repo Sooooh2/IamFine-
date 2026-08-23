@@ -1,7 +1,45 @@
 [gd_scene format=3 uid="uid://dpobuiskdj5v3"]
 
 [ext_resource type="Script" uid="uid://ddlujneqxd1t7" path="res://systems/polling/server.gd" id="1_3glrc"]
-[ext_resource type="Texture2D" uid="uid://d0hkqxcln20n0" path="res://icon.svg" id="2_1ceju"]
+[ext_resource type="Texture2D" uid="uid://c56ha5cok40w6" path="res://assets/npc2-sheet.png" id="2_1ceju"]
+
+[sub_resource type="Animation" id="Animation_hrycb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_j10ms"]
+resource_name = "idle"
+length = 0.8333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.52),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_riemg"]
+_data = {
+&"RESET": SubResource("Animation_hrycb"),
+&"idle": SubResource("Animation_j10ms")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrycb"]
 size = Vector2(116, 116)
@@ -13,8 +51,29 @@ radius = 197.88127
 script = ExtResource("1_3glrc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=432223729]
-modulate = Color(0.91527975, 5.1018596e-06, 0.5683081, 1)
+texture_filter = 1
+position = Vector2(9, -1)
+scale = Vector2(2.3, 2.3)
 texture = ExtResource("2_1ceju")
+hframes = 6
+vframes = 3
+
+[node name="Label" type="Label" parent="Sprite2D" unique_id=1595140424]
+anchors_preset = -1
+anchor_left = -1.057
+anchor_top = -3.7000003
+anchor_right = -1.057
+anchor_bottom = -3.7000003
+offset_left = 33.277077
+offset_top = 225.0261
+offset_right = 58.277077
+offset_bottom = 237.0261
+theme_override_font_sizes/font_size = 8
+text = "Server"
+metadata/_edit_use_anchors_ = true
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=576785604]
+libraries/ = SubResource("AnimationLibrary_riemg")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=453993135]
 

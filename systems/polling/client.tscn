@@ -62,6 +62,14 @@ hframes = 6
 vframes = 3
 frame = 1
 
+[node name="Label" type="Label" parent="anim/Sprite2D" unique_id=1210873587]
+offset_left = -14.163097
+offset_top = 18.025745
+offset_right = 8.836903
+offset_bottom = 30.025745
+theme_override_font_sizes/font_size = 8
+text = "Client"
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1121069317]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=627547052]
