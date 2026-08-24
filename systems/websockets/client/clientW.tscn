@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bpsp5ee4gdua"]
+
+[ext_resource type="Script" uid="uid://byh7taxcigjsx" path="res://systems/websockets/client/client_w.gd" id="1_822rn"]
+[ext_resource type="Texture2D" uid="uid://bc1ion380i5is" path="res://assets/npc1-Sheet.png" id="2_stvhv"]
+
+[sub_resource type="Animation" id="Animation_w1jh3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_udcad"]
+resource_name = "womanIdle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c81r0"]
+_data = {
+&"RESET": SubResource("Animation_w1jh3"),
+&"womanIdle": SubResource("Animation_udcad")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edty7"]
+size = Vector2(116, 116)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tptir"]
+radius = 197.88127
+
+[node name="client" type="Node2D" unique_id=752417608]
+script = ExtResource("1_822rn")
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=522143587]
+libraries/ = SubResource("AnimationLibrary_c81r0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1506328731]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=536347501]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_edty7")
+
+[node name="interactionArea" type="Area2D" parent="." unique_id=1754111814]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactionArea" unique_id=203744367]
+shape = SubResource("CircleShape2D_tptir")
+
+[node name="Label" type="Label" parent="." unique_id=1862246106]
+offset_left = 73.0
+offset_top = -50.0
+offset_right = 95.0
+offset_bottom = -27.0
+theme_override_colors/font_color = Color(0.12225223, 0.12225223, 0.12225223, 1)
+text = "[E]"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=684029266]
+texture_filter = 1
+position = Vector2(11, -3.9999847)
+scale = Vector2(2.33, 2.33)
+texture = ExtResource("2_stvhv")
+hframes = 6
+vframes = 3
+frame = 1
+
+[node name="Label" type="Label" parent="Sprite2D" unique_id=2131776853]
+offset_left = -14.163097
+offset_top = 18.025745
+offset_right = 8.836903
+offset_bottom = 30.025745
+theme_override_font_sizes/font_size = 8
+text = "Client"

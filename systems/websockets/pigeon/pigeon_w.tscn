@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bf0l8gtfqnscj"]
+
+[ext_resource type="Script" uid="uid://cv8ikjlx5ci2n" path="res://systems/websockets/pigeon/pigeon_w.gd" id="1_xms6e"]
+
+[node name="pigeonW" type="Node2D" unique_id=278540036]
+script = ExtResource("1_xms6e")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=5095094]
+offset_right = 40.0
+offset_bottom = 40.0

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cxtv458pfrdir" path="res://systems/polling/polling.gd" id="1_cab65"]
 [ext_resource type="PackedScene" uid="uid://dpobuiskdj5v3" path="res://systems/polling/server.tscn" id="2_78keg"]
 [ext_resource type="PackedScene" uid="uid://c6kjehd1pslf6" path="res://systems/polling/player.tscn" id="3_cab65"]
-[ext_resource type="PackedScene" uid="uid://cgkvoyuujogo3" path="res://systems/polling/dialogue.tscn" id="5_ucbku"]
+[ext_resource type="PackedScene" uid="uid://cgkvoyuujogo3" path="res://systems/dialogue.tscn" id="5_ucbku"]
 
 [node name="polling" type="Node2D" unique_id=1124342587]
 script = ExtResource("1_cab65")

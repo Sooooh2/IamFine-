@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://1305cxp2euf4"]
+
+[ext_resource type="Texture2D" uid="uid://c56ha5cok40w6" path="res://assets/npc2-sheet.png" id="1_fu5ev"]
+[ext_resource type="Script" uid="uid://b8m8pyn87dnym" path="res://systems/websockets/server/server_w.gd" id="1_go63y"]
+
+[sub_resource type="Animation" id="Animation_hrycb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_j10ms"]
+resource_name = "idle"
+length = 0.8333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.52),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_go63y"]
+_data = {
+&"RESET": SubResource("Animation_hrycb"),
+&"idle": SubResource("Animation_j10ms")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulmcf"]
+size = Vector2(116, 116)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qdfh8"]
+radius = 197.88127
+
+[node name="serverW" type="Node2D" unique_id=1397772817]
+script = ExtResource("1_go63y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1682867909]
+texture_filter = 1
+position = Vector2(9, -1)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("1_fu5ev")
+hframes = 6
+vframes = 3
+
+[node name="Label" type="Label" parent="Sprite2D" unique_id=567945113]
+anchors_preset = -1
+anchor_left = -1.057
+anchor_top = -3.7000003
+anchor_right = -1.057
+anchor_bottom = -3.7000003
+offset_left = 33.277077
+offset_top = 225.0261
+offset_right = 58.277077
+offset_bottom = 237.0261
+theme_override_font_sizes/font_size = 8
+text = "Server"
+metadata/_edit_use_anchors_ = true
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=2030085588]
+libraries/ = SubResource("AnimationLibrary_go63y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1281428141]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1731997785]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_ulmcf")
+
+[node name="interactionArea" type="Area2D" parent="." unique_id=1624950292]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactionArea" unique_id=1321446846]
+shape = SubResource("CircleShape2D_qdfh8")
+
+[node name="Label" type="Label" parent="." unique_id=626003746]
+visible = false
+offset_left = 73.0
+offset_top = -50.0
+offset_right = 95.0
+offset_bottom = -27.0
+theme_override_colors/font_color = Color(0.12225223, 0.12225223, 0.12225223, 1)
+text = "[E]"
