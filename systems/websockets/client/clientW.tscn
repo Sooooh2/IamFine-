@@ -45,7 +45,7 @@ _data = {
 size = Vector2(116, 116)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tptir"]
-radius = 197.88127
+radius = 146.27713
 
 [node name="client" type="Node2D" unique_id=752417608]
 script = ExtResource("1_822rn")

@@ -3,7 +3,7 @@ extends Control
 @onready var pulses: Control = $pulse
 @onready var hit_zone: ColorRect = $hitZone
 
-var pulse_scene = preload("res://systems/pulse.tscn")
+var pulse_scene = preload("res://systems/rhythm/pulse.tscn")
 var pulse_speed := 300.0
 
 var heartbeat = []

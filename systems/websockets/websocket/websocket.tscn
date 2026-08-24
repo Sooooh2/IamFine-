@@ -6,18 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cgkvoyuujogo3" path="res://systems/dialogue.tscn" id="5_ge4o3"]
 [ext_resource type="PackedScene" uid="uid://1305cxp2euf4" path="res://systems/websockets/server/server_w.tscn" id="6_aclms"]
 [ext_resource type="PackedScene" uid="uid://dcanxje54lny3" path="res://systems/websockets/player_w.tscn" id="6_tm26k"]
+[ext_resource type="PackedScene" uid="uid://cv27t61tsc5xf" path="res://systems/websockets/client/clientw_2.tscn" id="7_tm26k"]
 
 [node name="websocket" type="Node2D" unique_id=772214501]
 script = ExtResource("1_rlvm5")
 
 [node name="clientA" parent="." unique_id=752417608 instance=ExtResource("2_3jug4")]
 position = Vector2(137, 110)
-
-[node name="clientA2" parent="." unique_id=1516130511 instance=ExtResource("2_3jug4")]
-position = Vector2(623, 487)
-
-[node name="clientA3" parent="." unique_id=316087588 instance=ExtResource("2_3jug4")]
-position = Vector2(120, 486)
 
 [node name="pigeonW" parent="." unique_id=278540036 instance=ExtResource("3_ge4o3")]
 visible = false
@@ -30,3 +25,6 @@ position = Vector2(1012, 184)
 
 [node name="playerW" parent="." unique_id=132850391 instance=ExtResource("6_tm26k")]
 position = Vector2(467, 148)
+
+[node name="clientw2" parent="." unique_id=294622557 instance=ExtResource("7_tm26k")]
+position = Vector2(401, 514)

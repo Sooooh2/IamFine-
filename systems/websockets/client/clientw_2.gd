@@ -36,7 +36,6 @@ func _ready():
 
 func interact():
 	print("CLIENT INTERACT CALLED")
-
 	interacted.emit()
 	if not connected:
 		connected = true
@@ -63,7 +62,6 @@ func _on_interaction_area_body_entered(body):
 		label.visible = true
 		body.nearby_interactable = self
 		player_entered.emit()
-
 
 func _on_interaction_area_body_exited(body):
 	if body.is_in_group("player"):

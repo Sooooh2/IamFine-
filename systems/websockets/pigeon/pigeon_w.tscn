@@ -8,3 +8,9 @@ script = ExtResource("1_xms6e")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=5095094]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=144755609]
+offset_left = 46.0
+offset_top = 4.0
+offset_right = 86.0
+offset_bottom = 27.0

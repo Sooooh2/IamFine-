@@ -45,7 +45,7 @@ _data = {
 size = Vector2(116, 116)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qdfh8"]
-radius = 197.88127
+radius = 129.00388
 
 [node name="serverW" type="Node2D" unique_id=1397772817]
 script = ExtResource("1_go63y")
@@ -94,3 +94,5 @@ offset_right = 95.0
 offset_bottom = -27.0
 theme_override_colors/font_color = Color(0.12225223, 0.12225223, 0.12225223, 1)
 text = "[E]"
+
+[connection signal="body_entered" from="interactionArea" to="." method="_on_interaction_area_body_entered"]
