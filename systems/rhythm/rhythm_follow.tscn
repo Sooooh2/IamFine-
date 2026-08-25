@@ -28,3 +28,6 @@ color = Color(0.14044744, 0.14044744, 0.14044744, 1)
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="cam" type="Camera2D" parent="." unique_id=1295455677]
+position = Vector2(579, 324)

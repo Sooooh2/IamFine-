@@ -42,9 +42,8 @@ func interact():
 		print("Svsdvsxva")
 		dialogue_requested.emit(first_talk.pick_random())
 	else:
-		dialogue_requested.emit(
-			"The connection is already open. Just wait for an update."
-		)
+		dialogue_requested.emit("The connection is already open. Just wait for an update.")
+
 
 func receive_update(message):
 	dialogue_requested.emit(message)
@@ -52,7 +51,6 @@ func receive_update(message):
 
 
 func connection_lost():
-
 	connected = false
 	dialogue_requested.emit(end_talk.pick_random())
 
@@ -63,9 +61,9 @@ func _on_interaction_area_body_entered(body):
 		body.nearby_interactable = self
 		player_entered.emit()
 
+
 func _on_interaction_area_body_exited(body):
 	if body.is_in_group("player"):
 		label.visible = false
-
 		if body.nearby_interactable == self:
 			body.nearby_interactable = null

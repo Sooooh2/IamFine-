@@ -18,7 +18,6 @@ var outgoing_pigeons = []
 
 
 func _ready():
-
 	clients = [clienta1, clienta2]
 	for client in clients:
 		connections[client] = false
@@ -42,7 +41,6 @@ func _on_client_interacted(clicked_client):
 
 
 func _on_client_entered(clicked_client):
-
 	for pigeon in pending_pigeons:
 		if pigeon.target_client == clicked_client:
 			print("Correct pigeon delivered to ",clicked_client.name)
@@ -52,7 +50,6 @@ func _on_client_entered(clicked_client):
 
 
 func start_connection(target_client):
-
 	print("MAIN: STARTING CONNECTION -> ",target_client.name)
 	connections[target_client] = true
 	target_client.connected = true
