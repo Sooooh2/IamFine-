@@ -1,0 +1,536 @@
+[gd_scene format=4 uid="uid://b0r3d4ydhnftd"]
+
+[ext_resource type="PackedScene" uid="uid://bjtgs6wpo5s0n" path="res://assets/GiganticOffice.blend" id="1_qjtm2"]
+[ext_resource type="PackedScene" uid="uid://b7r8ryq2rod4w" path="res://player.tscn" id="2_apc7y"]
+[ext_resource type="Texture2D" uid="uid://dsemdtq1xtu8u" path="res://assets/pot!Main.png" id="2_p7del"]
+[ext_resource type="Script" uid="uid://vi0juayx3iui" path="res://level.gd" id="2_pcfam"]
+[ext_resource type="Texture2D" uid="uid://1a48kum775xw" path="res://assets/potIMG.png" id="3_c6ked"]
+[ext_resource type="Texture2D" uid="uid://clgmklap2f7vn" path="res://assets/pot!MainEdge.png" id="3_h38m5"]
+[ext_resource type="Texture2D" uid="uid://dgtdyhwxmrl5c" path="res://assets/normPotImg.png" id="4_6i03c"]
+[ext_resource type="Texture2D" uid="uid://sjjc1drbaxxw" path="res://assets/textures/leafPlantMonstera.png" id="4_yn4yk"]
+[ext_resource type="Shader" uid="uid://bsm6l1sdk8k68" path="res://assets/visu.gdshader" id="5_h38m5"]
+[ext_resource type="Texture2D" uid="uid://co1h6t084fks2" path="res://assets/textures/Glossy Cream tiles with white grout_Opacity.png" id="8_qj63g"]
+[ext_resource type="Texture2D" uid="uid://cvocfoqxp3l3m" path="res://assets/textures/Glossy Cream tiles with white grout_Metallic.png" id="9_vftoq"]
+[ext_resource type="Texture2D" uid="uid://cptl580vee6l4" path="res://assets/textures/Glossy Cream tiles with white grout_Normal.png" id="10_pcfam"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p7del"]
+shader = ExtResource("5_h38m5")
+shader_parameter/pixel_size = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6i03c"]
+albedo_texture = ExtResource("3_c6ked")
+normal_enabled = true
+normal_texture = ExtResource("4_6i03c")
+heightmap_enabled = true
+uv1_scale = Vector3(1.93, 1.93, 1.93)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6fby"]
+albedo_texture = ExtResource("2_p7del")
+normal_enabled = true
+normal_scale = 0.7
+normal_texture = ExtResource("3_h38m5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdtod"]
+resource_name = "Glossy Cream tiles with white grout"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("8_qj63g")
+metallic = 1.0
+metallic_texture = ExtResource("9_vftoq")
+metallic_texture_channel = 2
+roughness = 0.73636365
+roughness_texture = ExtResource("9_vftoq")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("10_pcfam")
+uv1_scale = Vector3(0.01, 0.01, 1)
+uv1_offset = Vector3(0, 0.99, 0)
+metadata/extras = {
+"asset_data": {
+"access": "free",
+"accessLabel": "Free",
+"addonVersion": "3.19.2",
+"assetBaseId": "a05fa3ad-5f04-4dd9-8246-ceba82dc7c7f",
+"assetType": "material",
+"author": {
+"aboutMe": "",
+"aboutMeUrl": "https://www.antoine-fraysse.fr/",
+"avatar128": "/avatar-redirect/06cd2744-4422-4f82-8b2b-91016b934d33/128/",
+"firstName": "antoine",
+"fullName": "antoine f",
+"gravatarHash": "bd427aea13aef228edfb61f1f2434890",
+"id": "695018",
+"lastName": "f"
+},
+"available_resolutions": [],
+"basePrice": "",
+"canDownload": true,
+"canDownloadError": true,
+"category": "tiles",
+"created": "2026-05-29T10:04:27.453182+02:00",
+"description": "Essential classic 10x10cm square ceramic tiles featuring a brilliant glossy glaze that reflects light beautifully, complete with crisp, realistic grout lines for a timeless kitchen backsplash or modern bathroom wall.",
+"dictParameters": {
+"addons": true,
+"animated": false,
+"engine": "cycles",
+"joinBlenderkitDiscounts": true,
+"materialStyle": "realistic",
+"megapixels": 32.0,
+"nodeCount": 17.0,
+"platforms": ["windows-x64", "macos-arm64", "linux-x64", "macos-x64", "windows-arm64"],
+"procedural": false,
+"processingDate": "2026-06-14T06:52:01.454934+00:00",
+"purePbr": false,
+"sexualizedContent": false,
+"shaders": ["[principled]"],
+"textureCount": 8.0,
+"textureResolutionMax": 2048.0,
+"textureResolutionMin": 2048.0,
+"textureSizeMeters": 1.0,
+"uv": false,
+"validatedManufacturer": true,
+"validatedManufacturerActor": "no_data",
+"validatedManufacturerDate": "2026-05-29T09:53:46.634946+00:00"
+},
+"displayName": "Glossy Cream tiles with white grout",
+"downloaded": 0.0,
+"files": [{
+"created": "2026-06-14T08:52:00.215513+02:00",
+"downloadUrl": "https://www.blendkit.com/api/v1/downloads/1120716/",
+"fileThumbnail": "",
+"fileThumbnailLarge": "",
+"fileType": "blend",
+"fileUploadSize": 1154303.0,
+"file_name": "/home/sahip9211/Documents/Godot-game/iam-fine-/assets/assets/materials/glossy-cream-til_68797ae1-48a6-48df-9295-30f10c1190ae/glossy-cream-tiles-with-white-grout_985ec25b-5134-4161-953a-2275fc0ee9de.blend",
+"filename": "assets/68797ae148a648df929530f10c1190ae/files/blend_985ec25b-5134-4161-953a-2275fc0ee9de.blend",
+"modified": "2026-06-14T08:52:00.215529+02:00",
+"resolution": 0.0,
+"thumbnailMiddleUrl": "",
+"thumbnailSmallUrl": "",
+"url": "https://assets.blenderkit.com/assets/68797ae148a648df929530f10c1190ae/files/blend_985ec25b-5134-4161-953a-2275fc0ee9de.blend?verify=1787805903-pdgNBzwBoo1uUEePymd5Fply1eRyiTSXSZxbvgIoe48%3D"
+}, {
+"created": "2026-05-29T10:04:29.747746+02:00",
+"downloadUrl": "https://www.blendkit.com/api/v1/downloads/1100818/",
+"fileThumbnail": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.96x96_q85_crop-%2C.png",
+"fileThumbnailLarge": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.1024x1024_q85_crop-%2C.png",
+"fileType": "thumbnail",
+"fileUploadSize": 348771.0,
+"filename": "assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png",
+"modified": "2026-05-29T10:04:29.747765+02:00",
+"resolution": 0.0,
+"thumbnailMiddleUrl": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.512x512_q85_crop-%2C.png",
+"thumbnailSmallUrl": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.256x256_q85_crop-%2C.png",
+"url": ""
+}],
+"filesSize": 1467.0,
+"id": "68797ae1-48a6-48df-9295-30f10c1190ae",
+"isForSale": false,
+"isFree": true,
+"isPrivate": false,
+"lastAnimatedThumbnailUpload": null,
+"lastBlendUpload": "2026-06-14T06:52:00.215513+00:00",
+"lastGltfGodotUpload": null,
+"lastGltfUpload": null,
+"lastPhotoThumbnailUpload": null,
+"lastResolutionUpload": null,
+"lastThumbnailUpload": "2026-05-29T08:04:29.747746+00:00",
+"lastUserInteraction": "2026-05-29T10:04:32.307148+02:00",
+"lastVideoUpload": null,
+"lastZipFileUpload": "",
+"last_upload": "2026-06-14T06:52:00.215513+00:00",
+"license": "royalty_free",
+"max_resolution": 0.0,
+"name": "Glossy Cream tiles with white grout",
+"pk": 227762.0,
+"ratingsAverage": {
+"bookmarks": 0.9433962264150944,
+"quality": 8.0,
+"virtualPrice": null,
+"workingHours": 2.0
+},
+"ratingsCount": {
+"bookmarks": 53.0,
+"quality": 1.0,
+"virtualPrice": 0.0,
+"workingHours": 1.0
+},
+"ratingsMedian": {
+"bookmarks": 1.0,
+"quality": 8.0,
+"virtualPrice": null,
+"workingHours": 2.0
+},
+"ratingsSum": {
+"bookmarks": 50.0,
+"quality": 8.0,
+"score": 160.0,
+"virtualPrice": null,
+"workingHours": 2.0
+},
+"resolution": "resolution_2K",
+"score": 160.0,
+"showMarketingLabels": true,
+"sourceAppName": "blender",
+"sourceAppVersion": "5.1.0",
+"tags": ["material", "bathroom", "kitchen", "wall", "backsplash", "ceramic", "tile", "square", "pbr", "grout"],
+"texture_size_meters": 1.0,
+"thumbnail": "thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.512x512_q85_crop-%2C.png.webp",
+"thumbnailLargeUrl": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.1024x1024_q85_crop-%2C.png",
+"thumbnailLargeUrlNonsquared": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.1024x1024_q85.png",
+"thumbnailLargeUrlNonsquaredWebp": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.1024x1024_q85.png.webp?webp_generated=1780049058",
+"thumbnailLargeUrlWebp": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.1024x1024_q85_crop-%2C.png.webp?webp_generated=1780049058",
+"thumbnailMiddleUrl": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.512x512_q85_crop-%2C.png",
+"thumbnailMiddleUrlNonsquared": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.512x512_q85.png",
+"thumbnailMiddleUrlNonsquaredWebp": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.512x512_q85.png.webp?webp_generated=1780049058",
+"thumbnailMiddleUrlWebp": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.512x512_q85_crop-%2C.png.webp?webp_generated=1780049058",
+"thumbnailSmallUrl": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.256x256_q85_crop-%2C.png",
+"thumbnailSmallUrlNonsquared": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.256x256_q85.png",
+"thumbnailSmallUrlNonsquaredWebp": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.256x256_q85.png.webp?webp_generated=1780049058",
+"thumbnailSmallUrlWebp": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.256x256_q85_crop-%2C.png.webp?webp_generated=1780049058",
+"thumbnailXlargeUrl": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.2048x2048_q85_crop-%2C.png",
+"thumbnailXlargeUrlNonsquared": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.2048x2048_q85.png",
+"thumbnailXlargeUrlNonsquaredWebp": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.2048x2048_q85.png.webp?webp_generated=1780049058",
+"thumbnailXlargeUrlWebp": "https://public.blenderkit.com/thumbnails/assets/68797ae148a648df929530f10c1190ae/files/thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.2048x2048_q85_crop-%2C.png.webp?webp_generated=1780049058",
+"thumbnail_small": "thumbnail_c14f8a59-cd56-4c8b-8bf0-be1c6cdbbb5c.png.256x256_q85_crop-%2C.png.webp",
+"tooltip_data": {
+"aname": "Glossy Cream tiles with white grout",
+"author_text": "by antoine f",
+"base_price_bg_color": [0.7, 0.7, 0.7, 0.6],
+"base_price_color": [1.0, 1.0, 1.0, 0.9],
+"base_price_text": "",
+"quality": "8",
+"user_price_bg_color": [0.7, 0.7, 0.7, 0.6],
+"user_price_color": [1.0, 1.0, 1.0, 0.9],
+"user_price_text": ""
+},
+"url": "https://www.blendkit.com/api/v1/assets/68797ae1-48a6-48df-9295-30f10c1190ae/",
+"verificationStatus": "validated",
+"versionNumber": 1.0,
+"videoLink": "",
+"webpGeneratedTimestamp": 1780049058.0
+},
+"blenderkit": {
+"asset_base_id": "a05fa3ad-5f04-4dd9-8246-ceba82dc7c7f",
+"category": 34.0,
+"description": "Essential classic 10x10cm square ceramic tiles featuring a brilliant glossy glaze that reflects light beautifully, complete with crisp, realistic grout lines for a timeless kitchen backsplash or modern bathroom wall.",
+"has_thumbnail": 1.0,
+"id": "68797ae1-48a6-48df-9295-30f10c1190ae",
+"is_generating_thumbnail": 0.0,
+"is_private": 1.0,
+"is_procedural": 0.0,
+"name": "Glossy Cream tiles with white grout",
+"name_changed": 1.0,
+"name_old": "Glossy Cream tiles with white grout",
+"node_count": 17.0,
+"report": "",
+"shaders": "principled, ",
+"tags": "material, bathroom, kitchen, wall, backsplash, ceramic, tile, square, pbr, grout",
+"texture_count": 8.0,
+"texture_resolution_max": 2048.0,
+"texture_resolution_min": 2048.0,
+"thumbnail": "C:\\Users\\antoine\\AppData\\Local\\Temp\\tmped4iucr8\\glossy-cream-tiles-with-white-grout.png",
+"thumbnail_generating_state": "",
+"thumbnail_generator_type": 0.0,
+"total_megapixels": 32.0,
+"uploading": 0.0,
+"verification_status": 2.0
+},
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jdtod"]
+_surfaces = [{
+"aabb": AABB(-0.5546262, -0.6616193, -0.3501223, 1.1040518, 1.3162017, 0.76256144),
+"format": 34896613377,
+"index_count": 360,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYACAAJAAoACAALAAkADAAKAAkACwAMAAkADQAIAAoACwAIAA0ADAAOAAoADQAKAA4ACwAPAAwACwANAA8ADwAOAAwADwANAA4AEAARABIAEwAQABIAEAATABQAEgAVABMAFAATABUAEgAWABUAFwAUABUAFwAVABYAFwAYABQAGQAUABgAFwAaABgAGQAbABQAEAAUABsAGAAcABkAGAAaABwAHQAbABkAHAAdABkAEAAbAB4AHQAeABsAHwAdABwAHwAcABoAHgAdACAAHwAgAB0AEAAeACEAIQAfABAAEAAfABEAHwAaABEAIAAfACIAIQAiAB8AIAAjAB4AJAAhAB4AJAAeACMAIAAlACMAIgAlACAAEQAaACYAIQAnACIAEQAmACcAEgARACcAIQAoACcAEgAnACgAJAAoACEAFgASACgAIgAnACkAKQAnACYAIgAqACUAIgApACoAKgArACUAKwAjACUAKwAsACMAJAAjACwALAArAC0ALQArAC4AKgAuACsALwAtAC4ALAAtADAALwAwAC0AJAAsADEAMQAqACQALAAyADEAKgAzACQALAAwADQAMgAsADQAJAAzACgAMQA1ACoAMgA1ADEALgAqADUAMgA0ADYANgAzADIANwA2ADQANwA0ADAAMwA2ADcAOAAuADUAMgA4ADUAMwA4ADIAOAAvAC4AKgApADMAKQAvADgAMwApADgAKQA5AC8AKQAmADkAOgAwAC8AOQA6AC8ANwAwADoAOQA7ADoAOwA3ADoAOwA5ACYAMwA3ADwAOwA8ADcAKAAzADwAKAA8ABYAOwAWADwAOwAmAD0AOwA9ABYAGgA9ACYAFwAWAD0AGgAXAD0A"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 62,
+"vertex_data": PackedByteArray("0QR6Vq3yAADRBPhcLg0AANEE+Fyt8gAA0QR6Vi4NAACy/vhcLg0AALL+elat8gAAsv74XK3yAACy/npWLg0AANEERqWt8gAA0QQbrC4NAADRBBusrfIAANEERqUuDQAAsv4brC4NAACy/kalrfIAALL+G6yt8gAAsv5GpS4NAABp9DIN//8AAGn0cvUAAAAAafRy9f//AADO/QD+//8AAP//SP3//wAAw/z/////AAChhP////8AAMP8//+uBAAA//9I/a4EAAD//wAArgQAAOz8Mv0AAAAA//8AAP//AADr/IEDAAAAAMP8AAAAAAAAoYQAAP//AABp9DINAAAAAKGEAAAAAAAAoYQyDf//AAChhDINAAAAAF17AAD//wAAXXsyDf//AABdewAAAAAAAKGENP0AAAAAoYRy9QAAAAChhHL1//8AAF17cvUAAAAAXXsyDQAAAAA7AwAAAAAAAAAAAAD//wAAAAAAAK4EAAATA4EDAAAAABIDMv0AAAAAAABI/a4EAACVCzIN//8AAJULcvX//wAAXXty9f//AAAAAEj9//8AAJULMg0AAAAAMAIA/v//AAA7A/////8AAJULcvUAAAAAXXs0/QAAAAA7A///rgQAAF17//+uBAAAXXv/////AAChhP//rgQAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ahncj"]
+resource_name = "GiganticOffice_Cube_013"
+_surfaces = [{
+"aabb": AABB(-0.32277673, -0.01, -0.54674363, 0.35353786, 0.01, 1.2201521),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAAAEAAEAAgADAAUAAgAFAAAAAAAGAAQAAAAFAAYABAAHAAEAAQAHAAMABAAGAAcABQADAAcABQAHAAYA"),
+"name": "Glossy Cream tiles with white grout",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/kKlvgAAAACAZCw/wP77PAAAAABk9wu/wP77PAAAAACAZCw/wP77PArXI7yAZCw//kKlvgAAAABk9wu//kKlvgrXI7yAZCw//kKlvgrXI7xk9wu/wP77PArXI7xk9wu/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jdtod")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wsw4v"]
+resource_name = "GiganticOffice_Plane_005"
+_surfaces = [{
+"aabb": AABB(-0.32277673, -0.01, -0.54674363, 0.35353786, 0.01, 1.2201521),
+"attribute_data": PackedByteArray("AAAAAKxMZT/HMl3A0w8MQQAAgD884g4+ZJmOQKYf+MAAAIA/rExlP2SZjkDTDwxBAAAAADziDj7HMl3Aph/4wAAAAACsTGU/xzJdwNMPDEEAAIA/POIOPmSZjkCmH/jAAAAAADziDj7HMl3Aph/4wAAAgD+sTGU/ZJmOQNMPDEEAAAAArExlP8cyXcDTDwxBAAAAADziDj7HMl3Aph/4wAAAAAA84g4+xzJdwKYf+MAAAAAArExlP8cyXcDTDwxBAACAP6xMZT9kmY5A0w8MQQAAAACsTGU/xzJdwNMPDEEAAAAArExlP8cyXcDTDwxBAACAP6xMZT9kmY5A0w8MQQAAgD884g4+ZJmOQKYf+MAAAIA/rExlP2SZjkDTDwxBAACAP6xMZT9kmY5A0w8MQQAAgD884g4+ZJmOQKYf+MAAAAAAPOIOPscyXcCmH/jAAACAPzziDj5kmY5Aph/4wAAAgD884g4+ZJmOQKYf+MAAAAAAPOIOPscyXcCmH/jA"),
+"format": 34359742519,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_jdtod"),
+"name": "Glossy Cream tiles with white grout",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/kKlvgAAAACAZCw/wP77PAAAAABk9wu/wP77PAAAAACAZCw//kKlvgAAAABk9wu//kKlvgrXI7yAZCw/wP77PArXI7xk9wu//kKlvgrXI7xk9wu/wP77PArXI7yAZCw//kKlvgAAAACAZCw//kKlvgrXI7xk9wu//kKlvgAAAABk9wu//kKlvgrXI7yAZCw/wP77PAAAAACAZCw//kKlvgrXI7yAZCw//kKlvgAAAACAZCw/wP77PArXI7yAZCw/wP77PAAAAABk9wu/wP77PArXI7yAZCw/wP77PAAAAACAZCw/wP77PArXI7xk9wu//kKlvgAAAABk9wu/wP77PArXI7xk9wu/wP77PAAAAABk9wu//kKlvgrXI7xk9wu//3///////7//f///////v/9///////+//3///////7//fwAA////P/9/AAD///8//38AAP///z//fwAA////PwAA/3////+/AAD/f////78AAP9/////vwAA/3////+//3//f////z//f/9/////P/9//3////8//3//f////z////9/////v////3////+/////f////7////9/////v/////////8//////////z//////////P/////////8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ahncj")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_10ofd"]
+data = PackedVector3Array(-0.32277673, 0, 0.6734085, 0.030761123, 0, -0.54674363, 0.030761123, 0, 0.6734085, -0.32277673, 0, 0.6734085, -0.32277673, 0, -0.54674363, 0.030761123, 0, -0.54674363, -0.32277673, -0.01, 0.6734085, 0.030761123, -0.01, -0.54674363, -0.32277673, -0.01, -0.54674363, -0.32277673, -0.01, 0.6734085, 0.030761123, -0.01, 0.6734085, 0.030761123, -0.01, -0.54674363, -0.32277673, 0, 0.6734085, -0.32277673, -0.01, -0.54674363, -0.32277673, 0, -0.54674363, -0.32277673, 0, 0.6734085, -0.32277673, -0.01, 0.6734085, -0.32277673, -0.01, -0.54674363, 0.030761123, 0, 0.6734085, -0.32277673, -0.01, 0.6734085, -0.32277673, 0, 0.6734085, 0.030761123, 0, 0.6734085, 0.030761123, -0.01, 0.6734085, -0.32277673, -0.01, 0.6734085, 0.030761123, 0, -0.54674363, 0.030761123, -0.01, 0.6734085, 0.030761123, 0, 0.6734085, 0.030761123, 0, -0.54674363, 0.030761123, -0.01, -0.54674363, 0.030761123, -0.01, 0.6734085, -0.32277673, 0, -0.54674363, 0.030761123, -0.01, -0.54674363, 0.030761123, 0, -0.54674363, -0.32277673, 0, -0.54674363, -0.32277673, -0.01, -0.54674363, 0.030761123, -0.01, -0.54674363)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vsly"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("3_c6ked")
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6ty01"]
+_surfaces = [{
+"aabb": AABB(-0.9999996, -1.2118647, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 228,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAgADAAQAAQAFAAMABAADAAUAAQAGAAUABwACAAQAAAAIAAEACQABAAgABgABAAkACgAIAAAACgAJAAgACwAAAAIACwACAAcADAAKAAAADAAAAAsADQAJAAoADgAKAAwADgANAAoADQAPAAkABgAJAA8AEAAPAA0AEAAGAA8AEQAQAA0AEQANAA4AEgAGABAAEwAQABEAEwASABAAEgAUAAYABQAGABQAFQAFABQAFQAUABIABAAFABUAFgASABMAFgAVABIAFwAEABUAFwAVABYABwAEABcAGAAWABMAGQAXABYAGAAZABYAGQAaABcAGgAHABcAGwAaABkAGgAcAAcAHQAbABkAHQAZABgAGwAeABoAHQAeABsAHgAcABoAHAALAAcAHgAfABwAHAAgAAsAHwAgABwAIAAMAAsAHgAhAB8AHwAhACAAHQAhAB4AIAAiAAwAIQAiACAAIgAOAAwAIQAjACIAIgAkAA4AIwAkACIAJAARAA4AIQAlACMAIwAlACQAIQAdACUAJQAdACYAJgAdABgAJQAnACQAJQAmACcAJAAnABEAJgAYACcAJwATABEAJwAYABMA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray("+sn///rJAACf6Ljt/38AAJ/o////fwAA+sm47QQ2AAD6yf//BDYAAP9/uO1fFwAAXxe47f9/AAD//////38AAPrJuO36yQAA/3+47Z/oAAD/f///n+gAAIHa//+B2gAA/3//////AAAENv//+skAAH0l//+B2gAABDa47frJAABfF////38AAAAA////fwAABDb//wQ2AAB9Jf//fSUAAAQ2uO0ENgAA/3///18XAAD/f///AAAAAIHa//99JQAARCzeGUQsAAD/f94ZlgkAALrT3hlELAAA/38AACYcAABo9t4Z/38AAGU5AABlOQAAmcYAAGU5AADY4wAA/38AALrT3hm60wAAmcYAAJnGAAD/f94ZaPYAAP9/AADY4wAARCzeGbrTAABlOQAAmcYAACYcAAD/fwAAlgneGf9/AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_etsa6"]
+resource_name = "GiganticOffice_Cylinder_003"
+_surfaces = [{
+"aabb": AABB(-0.9999996, -1.2118647, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("9E41nbBHZYe1TnOH70cnnXzKZQm5tYM7ubUoHtjnRlB8ykZQmvwoHtjnZQma/IM7HJuvP+l4+kd5da8/KGO7XayX+kfcWkxaubVMWihjf3xtrbtd3Frvf7m173/peECSba1/fHl1jJocm4yarJdAkv7/B2Z6y0ZQPupGULm1y4S5tQdmPuqMmv7/y4R6y4yaOFY1nfROZYf5VXOHM08nnatAdIdFRzWdQEA1nbBHdIe1TnOH70ehaPROsGiwR2WH+VVzhzNPoWg4VrBo9E5lh7BH3km1TqFosEehaLVO3kmrQLBosEd0h6tAdIewR7BoQEDvUrBHsGirQLBoRUfvUoo/hqfcWrL/PkD//ylYP6e4HD+nPkD//5sasv+KP4anGwSUppsasv8AAPj+uBw/p3tzCKcVmwn+eXV7/0WWsqXcWoKneXV7/9xa//97cwin266Gp33UZf/brv//q9H4pu4kvURAQOicoiU1nY09dkRIIqc6jT12RO4kvUQLN2s67ARrOu4kvUQdAnZESCKnOmyxa52r0fim266Gp8fO85zHzvOcR+oapqvR+KaI4zic0nXfnEWWsqV7cwinKJO+myiTvpvbrkakRZaypeOnjJqIHzWdij+Gp7gcP6fjPHGd4zxxnSlYP6eKP4anp1E1nR0CdkSiJTWdAADonO4kvUQ="),
+"format": 34896613399,
+"index_count": 228,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUABQAHAAgABwAEAAkACQAEAAoABwAJAAsADAANAA4ADgANAA8ADAAQAA0ADgAPABEAEgAQAAwAEQAPABMAEgAUABAAEQATABUAFgAUABIAFQATABcAFgAYABQAFQAXABkAGgAYABYAGQAXABsAGgAbABgAGQAbABoAHAAdAB4AHAAfAB0AHQAfACAAHwAcACEAIQAcACIAHwAhACMAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0AYABhAGIAYABjAGEAZABlAGYAZABnAGUAaABpAGoAaABrAGkAbABtAG4AbABvAG0AcABxAHIAcABzAHEAdAB1AHYAdAB3AHUAeAB5AHoAeAB7AHkAfAB9AH4AfAB/AH0A"),
+"material": SubResource("StandardMaterial3D_0vsly"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 128,
+"vertex_data": PackedByteArray("+sn///rJS9+f6Ljt/39L35/o////f0vf+sm47frJS99lOQAAZTkZ35nGAABlORnf/38AACYcGd+ZxgAAmcYZ39jjAAD/fxnfZTkAAJnGGd8mHAAA/38Z3/9/AADY4xnfgdr//30ljMH/f///XxeMwf9///8AAIzBBDb//wQ2jMH6yf//BDaMwX0l//99JYzB//////9/jMFfF////3+MwZ/o////f4zBAAD///9/jMGB2v//gdqMwQQ2///6yYzB+sn///rJjMF9Jf//gdqMwf9//////4zB/3///5/ojMGf6Ljt/3+Mwf9/uO1fF4zB+sm47QQ2jMFfF7jt/3+MwQQ2uO0ENozB/3+47Z/ojMH6ybjt+smMwQQ2uO36yYzBBDb///rJyPT/f7jtn+jI9P9///+f6Mj0BDa47frJyPQENv//BDbIzF8XuO3/f8jMXxf///9/yMwENrjtBDbIzJ/o////fwTN+sm47QQ2BM36yf//BDYEzZ/ouO3/fwTN/3///5/ow/T6ybjt+snD9PrJ///6ycP0/3+47Z/ow/RfF////38Z3wQ2uO36yRnfBDb///rJGd9fF7jt/38Z3/9///9fF4zBBDa47QQ2jMEENv//BDaMwf9/uO1fF4zB+sn//wQ2jMH/f7jtXxeMwf9///9fF4zB+sm47QQ2jMGWCd4Z/3/f/n0l//99Jd/+AAD///9/3/5ELN4ZRCzf/kQs3hm609r+AAD///9/2v59Jf//gdra/pYJ3hn/f9r+/3/eGWj26/59Jf//gdrr/v9//////+v+RCzeGbrT6/66094ZutMn/v9//////yf+gdr//4HaJ/7/f94ZaPYn/mj23hn/f6n+gdr//4Haqf7//////3+p/rrT3hm606n+utPeGUQsVP7//////39U/oHa//99JVT+aPbeGf9/VP7/f94Zlglk/oHa//99JWT+/3///wAAZP66094ZRCxk/v9/AAAmHInoutPeGUQsiej/f94ZlgmJ6JnGAABlOYnoZTkAAGU5iej/f94ZlgmJ6EQs3hlELIno/38AACYcieiZxgAAZTnU62j23hn/f9TrutPeGUQs1OvY4wAA/3/U69jjAAD/f+XxutPeGbrT5fFo9t4Z/3/l8ZnGAACZxuXxmcYAAJnGqPn/f94ZaPao+brT3hm606j5/38AANjjqPn/fwAA2ONM/UQs3hm600z9/3/eGWj2TP1lOQAAmcZM/WU5AACZxpDylgneGf9/kPJELN4ZutOQ8iYcAAD/f5DyJhwAAP9/duxELN4ZRCx27JYJ3hn/f3bsZTkAAGU5duxELN4ZRCxk/v9///8AAGT+fSX//30lZP7/f94Zlglk/lzQ0s9c0NLPXNDSz1zQ0s/4L/Hf+C/x3/gv8d/4L/Hf+C/x3/gv8d/4L/Hf+C/x35HbNpKR2zaSkds2kpHbNpKR2zaSkds2kpHbNpKR2zaSkds2kpHbNpKR2zaSkds2kpHbNpKR2zaSkds2kpHbNpKR2zaSkds2kpHbNpKR2zaSkds2kpHbNpKR2zaSkds2kto5gTraOYE62jmBOto5gTqapGRbmqRkW5qkZFuapGRbmdtO25nbTtuZ207bmdtO2wrGk8UKxpPFCsaTxQrGk8X4rwZQ+K8GUPivBlD4rwZQNpLIbTaSyG02kshtNpLIbchtNpLIbTaSyG02kshtNpIKNLd+CjS3fgo0t34KNLd+Ok28fjpNvH46Tbx+Ok28fgxrLH4Mayx+DGssfgxrLH6gAf7qoAH+6qAB/uqgAf7qHgEqzR4BKs0eASrNHgEqzV8Ae7NfAHuzXwB7s18Ae7MEAMFqBADBagQAwWoEAMFqpAXQmaQF0JmkBdCZpAXQmdAZWnrQGVp60BlaetAZWno3DQW7Nw0FuzcNBbs3DQW7BRMX1AUTF9QFExfUBRMX1E8Zc+5PGXPuTxlz7k8Zc+6nb9hlp2/YZadv2GWnb9hlbFSWbGxUlmxsVJZsbFSWbMk77HHJO+xxyTvscck77HE+FQOAPhUDgD4VA4A+FQOA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6ty01")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhd7g"]
+resource_name = "Material.001"
+cull_mode = 2
+roughness = 0.5
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iudn0"]
+resource_name = "monsterPlantLeaf.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("4_yn4yk")
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bdkgd"]
+_surfaces = [{
+"aabb": AABB(-2.3059063, -1.2787149, -1.0039687, 4.140131, 2.263189, 1.7413623),
+"format": 34896613377,
+"index_count": 540,
+"index_data": PackedByteArray("FgAXABgAFgAYABkAGQA9ABcAFwA9ABgAPQAZAD4APgAZABgAPQA/ABgAPQA+AD8APgAYAC0ALQAYAD8APgAtAEAAPwA+AEAAPwAwAC0ALQAwAEAAMAA/AEEAPwBAAEEALwBAADAAQQBAAEIAQgAwAEEALwBDAEAAQABDAEIALgAvADAALgAwAEIAQwAvAC4ALgBCAEQAQgBDAEQAHAAuAEQARABDABsARAAdABwARAAbAB0AQwBFABsAGwBFAB0AQwAuAEUARQAuABwAHQBFABoAGgBFABwAAwAAAEYARgAAAAEAAQADAEcAAwBIAEcAAwBGAEgASQABAEcARgABAEkASQBHAEgAAgBIAEYARgBJAEoASgACAEYASQBIAAQASwBKAEkABABLAEkABABIAEwATABIAAIASwAEAE0ABABMAE0AMQACAEoASwAxAEoATAACADEAMQBLAE4ASwBNAE4ATAAxAAUATQBMAAUAMQBOAAUATgBNADIABQBOAE8ATgAyAE8ATQAFAFAATQBQADIAUAAFADMABQBPADMABwBPADIAMwBPAAcAMgAGAAcABgAyAFAACAAzAAcAUAAIAAYACABQADMACQAKAFEAUQAKAAwACwAMAAkANABRAAwANAAMAAsACQBRAFIACwAJAFIAUwBSAFEAUQA0AFMADQALAFIANAALAA0ADQBSAFMAVABTADQANQANAFMAVAA1AFMANAANAA4AVAA0AA4ADQA1AA4AVAAOADYADgA1AFUADgBVADYANQBUAFYAVAA2AFYAEQBVADUANQBWABEANgBVAA8AVQARAA8ADwBWADYAEQBWABAAVgAPABAAVwAfACAAWAAfAFcAIQAfAFgAIAAhAFkAWQAhAFgAHgAgAFkAHgBZAFgAVwAgAB4AWABXADcAHgBYADcAWgBXAB4ANwBXAFoAHgA3ADgAWgAeADgAWwA3AFoANwBbADgAWwBaAFwAXABaADgAOABbACwAWwBcADkALABbADkAXQBcADgAOQBcAF0ALABdADgAOQBdAF4ALAA5AF4AXQAsAF8AXQBfAF4AXwAsABMAEwAsAF4AXgBfAGAAXwATAGAAEwBeABUAFQBeABIAXgBgABIAEwAVABQAYAAUABIAYAATABQAYQAjACQAJQAjAGEAIgAkACUAYQAkADsAIgA7ACQAJQBhADoAIgAlADoAYgBhADsAOgBhAGIAIgAmADsAIgA6ACYAOwAmAGMAYgA7AGMAZAA6AGIAJgA6AGQAZABiAGMAYwAmACcAJwAmAGQAZABjADwAYwAnADwAZAA8AGUAJwBkAGUAZQA8AGYAPAAnAGYAZwAnAGUAZQBmAGcAKQAnAGcAZgAnACkAKQBnACoAZgApACoAKgBnAGgAZwBmAGgAKABmACoAaABmACgAKgBoACsAaAAoACsA"),
+"lods": [0.047150586, PackedByteArray("FgAXABgAFgAYABkAFwAtABgALQAZABgAFwAZAC0ALgAvADAAMAAvAC4ALgAvABsALwAuABsAHAAuABsAGwAuABwAGwAdABwAHQAbABoAGgAbABwAAAABAAIAAwACAAEAAwAAAAIABAAxAAIABAACADEAMQAEAAUABAAxAAUABQAyADMAMgAFADMACAAyADMAMgAIAAYACAAzAAcAMgAGAAcABwAzADIACQAKAAsACwAKAAwACwAMAAkANAAMAAsANAALAAwANAALAA0ACwA0AA0ADQA0AA4ANAANAA4ADQA1AA4ADQAOADYADgA1ADYANQANADYAEQA2ADUANQA2ABEANgARAA8AEQA2ABAANgAPABAAHgAfACAAIQAfAB4AIAAhAB4AHgA3ADgANwAeADgALAA3ADgAOAA3ACwALAA3ADkAOQA3ACwALAA5ABMAOQAsABMALAATABIAEwAsABIAFQATABIAEgATABQAEwAVABQAOgAjACQAJQAjADoAIgAkACUAIgAlADoAIgA7ACQAOgAkADsAIgAmADsAIgA6ACYAJwA6ADsAJgA6ACcAJwA7ACYAJgAnADwAJwAmADwAPAAnACkAKQAnADwAKQAoACsAKAApACoAKgApACsA"), 0.07072587, PackedByteArray("FgAXABgAFwAZABgAFgAYABkAGgAbABwAGwAdABwAHQAbABoAAAABAAIAAwACAAEAAwAAAAIABAACAAUAAgAEAAUABQAGAAcABQAIAAYACAAFAAcACQAKAAsACwAKAAwACwAMAAkADQALAA4ACwANAA4ADgAPABAADgARAA8AEQAOABAAHgAfACAAIQAfAB4AIAAhAB4AIgAjACQAJQAjACIAIgAkACUAIgAmACQAIgAkACYAJwAiACYAJgAiACcAKAApACoAKgApACsAKQAoACsALAATABIAEwAsABIAFQATABIAEgATABQAEwAVABQA"), 0.95474243, PackedByteArray("AAABAAIAAwACAAEAAwAAAAIABAACAAUAAgAEAAUABQAGAAcABQAIAAYACAAFAAcACQAKAAsACwAKAAwACwAMAAkADQALAA4ACwANAA4ADgAPABAADgARAA8AEQAOABAAEgATABQAEwAVABQAFQATABIA"), 1.8268102, PackedByteArray("AAABAAIAAwACAAEAAwAAAAIABAACAAUAAgAEAAUABQAGAAcABQAIAAYACAAFAAcA")],
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 105,
+"vertex_data": PackedByteArray("NwNBoQAAAAAAANGeLQIAAJQXg5h0QQAAMQFXpVQDAABmIt+PS1YAAPZNW48DbgAA//8Ri8CDAAD8/+aIHXoAAP3/CY/WfQAAiU0R/WmSAADaT///g44AAIpYYNM4fwAA+0wU/7+JAAA+dNerhIIAAHSJYaILgAAA/f9TkF2CAAD9/92VAIYAAP3/5I8wjAAA+//shkaOAABayhCOx5EAAP3/Eo3VjgAA/v+nipCGAABkK34AaLAAAEIuAACtrgAAzSyDGZelAADhLacBs7UAAP3/7IOLhQAAcadBg8yMAAD8/7iAtYoAAP3/roU+jgAAs2/eem7jAAAedTxfvvkAABZ0d2H//wAALHJ/XLv6AADZiGfOr+MAAH2U0trw6QAAQJKJ30fqAAAhkzzbi/EAAP6H77LkyAAAO5kjoN6tAAD7/32QEZEAAEPDsJGUmQAA+//Ji9+WAAD9//2SxJkAAEuUvo/NqAAACjS3OnWdAADWdy92R4YAAHhY/mkSjgAAakXTVmOQAADQL/iRtFoAAImFYIiAgQAAXYokjIB6AADBZqy/PX0AAGuQzJx/iQAAjqlLmO+BAAC2cnSBjs0AAD95GIc8ywAAmJoRisCgAAAbiMi+xNkAAE2H9sLB0gAA/p3ookCmAABxMVwgkaYAABYxlSyRpgAA5zhIO8+ZAADOSO9ZxpYAAAxNMlmgkgAA8W9Nb6eMAADdcaR2S44AADuXqXq8iwAApqJvgrWFAAAMCZqdXhoAACkF7ZtjHAAAhg1cmq80AAAkEAWUxjQAAA0aAJXBQQAAWyYbjgdVAAC6LJ2Sj2AAAHBMx4xudQAAzFUZidtxAADnjgyINHwAAGWOCY5ugQAAhle24siHAAAeX/7G34QAAD9u8rYphgAAAYMGqfyFAADqtHORk4YAAN6yv5kmiAAA53Gnb7vqAAD3bfRyZuMAAFxvJ2tp9AAAGXNWepfaAAAkfpyIeLkAANl6vIJnxQAA0o2iiG2yAAACvwKIlJEAAJKuqosvnwAAqNOGitOUAADvjKzNp+AAACWK+Lu7zgAA9oucswW+AABFk26rH7oAAIqlqaBFqAAAMMEfli2VAADHvRaYlJ8AAKfg5ZPPmQAA")
+}, {
+"aabb": AABB(-2.4660497, -2.4449425, -2.6393495, 5.1350923, 4.4395857, 4.5824194),
+"format": 34896613377,
+"index_count": 558,
+"index_data": PackedByteArray("XgABAAIAXgAAAAEAXwBeAAIAXwACAAMAYAAAAF4AYAAEAAAAMABeAF8AMABgAF4AYQBfAAMAYQADABAADwBhABAADwAQABEADgBhAA8AYgBfAGEADgBiAGEAYgAwAF8ACgBiAA4ACgBjAGIAYwAwAGIABgBjAAoAYwBkADAAZABgADAABgBlAGMAZQBkAGMACABlAAYACAAHAGUABwAxAGUAZQAxAGQABwALADEAZABmAGAAMQBmAGQAZgAEAGAAZgAFAAQAMQBnAGYAZwAFAGYACwBnADEAZwAJAAUACwAMAGcADAAJAGcADAANAAkAaAAzADQAaAA1ADMAaQBoADQAaQA0ADYAagA1AGgAagA3ADUAMgBoAGkAMgBqAGgAawBpADYAawA2ADgAbAAyAGkAbABpAGsAbQA3AGoAbQBAADcAPwBqADIAPwBtAGoAbgAyAGwAbgA/ADIAbwBAAG0AbwBBAEAARgBBAG8ARgBHAEEARQBGAG8AcABvAG0ARQBvAHAAcABtAD8AQgBFAHAAcQBwAD8AQgBwAHEAcQA/AG4AQwBCAHEAQwBxAHIAcgBxAG4ARABDAHIARAByAD4AcgBuAHMAPgByAHMAcwBuAGwAPgBzAD0AcwBsAHQAPQBzAHQAdABsAGsAPQB0ADwAdABrAHUAPAB0AHUAdQBrADgAPAB1ADkAdQA4ADoAOQB1ADoAOQA6ADsAdgATABQAdgASABMAdwB2ABQAdwAUABYAeAASAHYAeAAVABIASAB2AHcASAB4AHYAeQB3ABYAeQAWABkAGAB5ABkAGAAZABoAFwB5ABgAegB3AHkAFwB6AHkAegBIAHcAGwB6ABcAGwB7AHoAewBIAHoAHAB7ABsAewB8AEgAfAB4AEgAHAB9AHsAfQB8AHsAHgB9ABwAHgAdAH0AHQB+AH0AfQB+AHwAHQAhAH4AfAB/AHgAfgB/AHwAfwAVAHgAfwAfABUAfgCAAH8AgAAfAH8AIQCAAH4AgAAgAB8AIQAiAIAAIgAgAIAAIgAjACAASQAmACQASQAlACYAKABJACQAKAAkACkAKgBJACgASgAlAEkAKgBKAEkASgAnACUAKwBKACoAgQAnAEoAKwCBAEoALQCBACsAgQAuACcALQAsAIEALAAuAIEALAAvAC4AggBMAE0AggBLAEwAgwCCAE0AgwBNAE8AhABLAIIAhABRAEsATgCCAIMATgCEAIIAhQCDAE8AhQBPAFgAWQCFAFgAWQBYAFoAVwCFAFkAhgCDAIUAVwCGAIUAhgBOAIMAWwCGAFcAWwCHAIYAhwBOAIYAXACHAFsAhwCIAE4AiACEAE4AXACJAIcAiQCIAIcAXQCJAFwAXQBWAIkAVgCKAIkAiQCKAIgAVgBVAIoAiACLAIQAigCLAIgAiwBRAIQAiwBSAFEAigCMAIsAjABSAIsAVQCMAIoAjABTAFIAVQBQAIwAUABTAIwAUABUAFMA"),
+"lods": [0.14935379, PackedByteArray("AAABAAIAMAAAAAIAMAAEAAAAMAACAAMABQAEADAADgAwAAMACgAwAA4ADgADAA8ADwADABAADwAQABEABgAwAAoABgAFADAABgAxAAUAMQAJAAUABwAxAAYACAAHAAYABwALADEACwAJADEACwAMAAkADAANAAkAMgAzADQAMgA1ADMANgAyADQAMgA3ADUAMgA2ADgAOQAyADgAOQA4ADoAOQA6ADsAPAAyADkAPQAyADwAPQA+ADIAPwA3ADIAPgA/ADIAPwBAADcAQQBAAD8AQgA/AD4AQwBCAD4ARABDAD4AQgBFAD8ARQBBAD8ARQBGAEEARgBHAEEAEgATABQASAASABQASAAVABIASAAUABYASAAfABUAFwBIABYAFwAWABgAGAAWABkAGAAZABoAGwBIABcAHABIABsAHQAfAEgAHAAdAEgAHgAdABwAHQAgAB8AIQAgAB0AIQAiACAAIgAjACAASQAmACQASQAlACYAKABJACQAKAAkACkAKgBJACgASgAlAEkAKgBKAEkASgAnACUAKwBKACoALAAnAEoAKwAsAEoALQAsACsALAAuACcALAAvAC4ASwBMAE0ATgBLAE0ATgBNAE8ATgBQAEsAUABRAEsAUABSAFEAUABTAFIAUABUAFMAVQBQAE4AVgBVAE4AVwBOAE8AVgBOAFcAVwBPAFgAWQBXAFgAWQBYAFoAWwBWAFcAXABWAFsAXQBWAFwA"), 1.0005432, PackedByteArray("AAABAAIAAwAAAAIAAwAEAAAABQAEAAMABgAFAAMABgAHAAUACAAHAAYABwAJAAUABgADAAoACwAJAAcACwAMAAkADAANAAkACgADAA4ADgADAA8ADwADABAADwAQABEAEgATABQAFQASABQAFQAUABYAFwAVABYAFwAWABgAGAAWABkAGAAZABoAGwAVABcAHAAVABsAHAAdABUAHgAdABwAHQAfABUAHQAgAB8AIQAgAB0AIQAiACAAIgAjACAAJAAlACYAJAAnACUAKAAkACkAKgAkACgAKwAkACoALAAnACQAKwAsACQALQAsACsALAAuACcALAAvAC4A")],
+"name": "monsterPlantLeaf.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 141,
+"vertex_data": PackedByteArray("5Tc0QmuCAAANQEFQ9oQAAEcyWlKdlgAAASnIVMimAAB5MawymYUAAFk3ziIqiQAAzUNCHzXOAAAVZW4NssAAAK1JlxBX0AAAOj3qEYaNAACTPO0tE8wAAHeMWwXCsgAAy2GMAr+gAAAaQwAAqZEAABc0mDzxyQAAOT1DS8/HAACQNVtXOrYAAKBG7lmtxQAAGIJ8mJbKAAD3gtCQ570AAEh5NKC/rwAAJoWWpc3TAABTc4KtLqIAAAWUFNi3lwAASJT+yyCOAADqgQK3gpMAAM2U3r+EhAAAjqSm4Q6gAADks2fre6gAALfZV+ZovQAA8MFY9QGxAAA3lHWxFtwAAAqkoL5+5AAA//8R2jDLAAAo1N3SJ94AAFu0O8zR7QAA9Re0iWxrAABKES29aV0AAMQZb66sdwAA0AgDwgBDAABSFLJoO08AAIge3GOkaQAAch2HbdI0AACcQl1yaRoAAJ4UUpo7BgAAUSkzdwAAAACXCdnGlygAACISrssuDgAA8iM4Ny6pAAA/YcgTSK4AABZCvMaxkAAA/WgVq3mmAAD3W8KspZkAAJJaE7l3qAAAAEs7rquMAACCSvzGZqoAANlJgbBLgAAA/1aNxKxqAAC1TQizHHQAAC9dJLZeaAAApGgp1OJtAABkc2zj1nAAAFtu4/EvcwAAn0Yr2iGUAADUS8XV/awAALdV/eTorwAA1GWD+xGOAACDZdT9uYEAAENi//9EdQAAjGY4+W2aAABgZMf2rKYAABtfLvTOsgAACH9gwga2AAC+A9CLd1UAAAAAppANOwAA8mRpYYKoAAD+XYNs7p4AABdidXg6qwAAV2Ukbp7KAABoZWaEhrcAAP6H+0Ai2wAAGGxRVhayAAAfcDRLp7sAAFd0GEA3xQAA7nn9NMrOAADsmf1MfucAAGOR4Vi88wAAKX0ahknjAAB8a1uQ1cMAAMl2NJG22QAAyHBOnCPQAADzgf962uwAACGH5G9s9gAAuIzJZP//AAD4LuxD5JUAAGInCEZNqAAAzS3iNNaWAADJLa9IVbgAAJkn9jkIugAA+zU9K8C7AACBM00o9KkAABBMbxsovgAAUjfMI/yYAADGSDERDpwAAGNQ5bq/mwAAakfFvBOPAAB9RmPGcZ0AAHJKQb/cggAAoEwNy/aEAAC+RtjXd6AAAK1VQt1eiAAAwlVS55SjAABsVq/pRZcAACxgguxPiwAAXGpa711/AAAYaIXgvXwAAItbrc0eeQAAe1L+wdV2AAC1fe6o9boAABt6D7jEqwAA7oQesyrFAADwguHCB50AAGeFN87JpgAAfJuj1g+vAAAXlvbJFr8AAKq5Mt8KtwAA3c2k007HAADBlwq+Kc8AADSzh8n72AAAFg98laQgAAA0ZVdtyrQAAIpjQ3kQwQAARmk7Ylq+AACBbz6FZc0AAKB0I3r31gAAlHwLb4zgAADWchJjOdQAAKCF9GMj6gAASogKWN7dAAAfciRX8ccAADt8DkyI0QAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ov800"]
+resource_name = "GiganticOffice_NurbsPath_002"
+_surfaces = [{
+"aabb": AABB(-2.3059063, -1.2787149, -1.0039687, 4.140131, 2.263189, 1.7413623),
+"attribute_data": PackedByteArray("/3+DjwGAi7uPl4/n/39e4f9/VfxboH3Akbae+/7/Luv+////I5P/fx+47YP9/ynJ/f94mgCAMrf/f0LfHJeQjgOABfsDgAuKdrTcm43EFIn//4S2/f+ciemc3v1Au9r4/v/23/3/ivr9/xzGh+D1/P7/Xvf9/4+T++JZhv7//3//f2CS/3/Zsw6IGI//f/9//n8E296GUPv+/8SgKdf/f/z/3Mr+/6iEdNcM9Pf/ePcxksP7C4CVzf9/8fAjgGmcAZPwgf9//39LjGOC/399uxuAoef+f22TXoxj9/9////io5z7D7xchKqifYX8/5Hpb95+/fvy///+/4a2+/9Wk7++Y//YkFn+VMCMnEWuYoafoiWQz69e+/umjPfZp/SDY89Cvz3RcYM70Fj8xqVy8IquMoR31S37Y8gAqlPWaowLn////qPQ8jGc9pU/xMeiML80itup/394lg6YrZjZ5MHBF+VKvZr3iIqvyGSWx7Gmk62JPI6x6X2k/ufXoUP7972X6cOmBcnlu4XJCdA8yS+/3IaL1WaURona+HaQCtXlhxPHgZJysaCIlIhCme6LUKKfpoamDtdYtzK/OrvTpSyckPvt0pq2btKw09CP39PSnmmquq2Mv+G+wdR32/PbydxQodeK0tOjh1n+Vo5nl+yGioW3ltfOcatrl+ilgsTHuezVJd2TsczRpdZS6SPkG4suvmed2LvasiWsy6pw5BbHNMAy3UDkddtYqSPfMoJp8OOu"),
+"format": 34896613399,
+"index_count": 540,
+"index_data": PackedByteArray("IAAhACIAIAAiACMAIQBaACIAJABaACEAWgBbACIAXAAiAFsAWgAkAF0AWgBdAFsAXQAkACUAXQAlAEEAWwBEAFwAXQBBAF4AWwBdAF4AQQBfAF4ARQBeAF8ARQBgAF4AWwBeAGEARABbAGEAYQBeAGIAYgBEAGEAXgBgAGIAQgBEAGIAQgBDAEQAYgBgAGMAQgBiAGMAYwBgACoAYwAqACsAYwArACgAKABCAGMAZABDAEIAZQBCACgAZABCAGUAJgBlACgAZABlACcAKQBlACYAJwBlACkAAwAEAGYAAwBmAGcAAgBnAGYAAwBnAGgAAQADAGgAaQBoAGcAaQABAGgAagAAAAEAagABAGkAagBpAGsAawAJAGoAbABrAGkAbABHAGsAaQBnAAUABQBsAGkABQBnAG0AbQBnAAIAbAAFAG4ABQBtAG4ARwBsAG8AbABuAG8ARwBvAAoAbQACAEYARgACAHAAbQBGAAYAbgBtAAYACgBvAHEACgBxAEkASQBxAAwAbwBIAHEADABxAEgAbwBuAEgASAALAAwAbgAGAHIAbgByAEgACwBIAHIAcgAGAEoAcgAHAAsABwByAEoABwBKAAgADQAOAHMAcwAOABAADwARAA0ASwBzABAASwAQABYADQBzAHQADwANAHQAcwBLAHUAdQB0AHMAEgAPAHQAEgB0AHUATAAPABIATAASABMATgASAHUAEgBOABMAdgB1AEsAdgBOAHUAdgBLABcAdgAXAE0AdgBNAHcATgB2AHcAGQB3AE0AdwAZABgAFAB3ABgATgB3ABQAFAB4AE4AEwBOAHgAeAAUABUAEwB4AE8ATwB4ABUAeQAtAC4ALAAuAHoAeQAuACwAewAtAHkALwAtAHsAfAAvAHsAMQAvAHwAMAB8AHsAMAB7AFIAewB5AFIAfQB5ACwAUgB5AH0AfQAsAFEALABQAFEAfgBSAH0AUgB+AFUAVQB+AFQAfgB9AH8AfwB9AFEAVAB+AFMAfgB/AFMAgAB/AFEAUwB/AIAAQACAAFEAVABTAIEAUwCAAIEAgABAAIIAgACCAIEAggBAABsAHgBUAIEAggAbAIMAgQCCAIMAgwAbABwAgwAcABoAgQCDABoAHQCBABoAHgCBAB0AHgAdAB8AhAAzADQANQAzAIQANgA0ADcANgBXADQAhAA0AFcANgA4AFcANQCEAFYAMgA1AFYAMgBWADoAVgCEAIUAhQCEAFcAOgBWAIYAhgBWAIUAOQA6AIYAhQBXAIcAVwA4AIcAhgCFAIcAhwA4AFkAhgCHAFgAhwBZAFgAOQCGAIgAhgBYAIgAWABZAIkAiABYAIkAiQBZADwAiQA8AD0AOwCJAD0AigA5AIgAiACJAIoAiwA5AIoAiwCKAD8AigCJAIwAjACJADsAPwCKAIwAjAA7AD4APwCMAD4A"),
+"lods": [0.047150586, PackedByteArray("IAAhACIAIAAiACMAIQBBACIAIQAkAEEAQQAkACUAQgBDAEQARABFAEIAQwBCACcAQgBFACoAKABCACoAJwBCACgAKgArACgAJgAnACgAKQAnACYAAAABAAIAAwACAAEAAwAEAAIABQACAEYABQBGAAYABQBHAAkARwAFAAoACgBIAEkADABJAEgASAALAAwASAAGAEoASAAHAAsABwBIAEoABwBKAAgADQAOAA8ADwARAA0ADwAOABAASwAPABAASwAQABYADwBLABIAEgBLABcATAAPABIATAASABMAEgAXAE0AEgBOABMATgASAE0AEwBOAE8AFABPAE4ATgBNABQATwAUABUAFABNABgATQAZABgALAAtAC4ALwAtADAAMQAvADAALABQAFEAUgAsAFEAQABSAFEAUwBSAEAAVABSAFMAVQBSAFQAVABTAB4AUwBAAB4AHgBAABoAQAAbABoAGgAbABwAHQAeABoAHgAdAB8AVgAzADQANQAzAFYAMgA1AFYAMgBWADoAOgBWADkAVgA0AFcAOQBWAFcANgBXADQANgA0ADcANgA4AFcAOQBXADgAOQA4AFgAOABZAFgAPAA5AFgAWABZADwAPwA8AD4APAA7AD4AOwA8AD0A"), 0.07072587, PackedByteArray("IAAhACIAIAAiACMAIQAkACUAJgAnACgAKQAnACYAKgArACgAAAABAAIAAwACAAEAAwAEAAIABQACAAYABwAGAAgACQAFAAoACgAHAAsACgALAAwADQAOAA8ADwAOABAADwARAA0ADwASABMAEwAUABUAEgAWABcAFAAXABgAFwAZABgALAAtAC4ALwAtADAAMQAvADAAMgAzADQANQAzADIANgA0ADcANgA4ADQAMgA0ADgAOQAyADgAOgAyADkAOwA8AD0APAA7AD4APwA8AD4AQAAbABoAGgAbABwAHgBAABoAHQAeABoAHgAdAB8A"), 0.95474243, PackedByteArray("AAABAAIAAwACAAEAAwAEAAIABQACAAYABwAGAAgACQAFAAoACgAHAAsACgALAAwADQAOAA8ADwAOABAADwARAA0ADwASABMAEwAUABUAEgAWABcAFAAXABgAFwAZABgAGgAbABwAHQAeABoAHgAdAB8A"), 1.8268102, PackedByteArray("AAABAAIAAwACAAEAAwAEAAIABQACAAYABwAGAAgACQAFAAoACgAHAAsACgALAAwA")],
+"material": SubResource("StandardMaterial3D_hhd7g"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(2.0000556, 2, 0, 0),
+"vertex_count": 141,
+"vertex_data": PackedByteArray("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")
+}, {
+"aabb": AABB(-2.4660497, -2.4449425, -2.6393495, 5.1350923, 4.4395857, 4.5824194),
+"attribute_data": PackedByteArray("ivvF44r7t/yn3Lf8xL23/Ir71MqK++Kx/3/xmOKe/3//f/9/ivvxmP9/4rHEvf9/p9z/f4r7/3//f9TK/3/F4+Ket/z/f7f8ivvF44r7t/yn3Lf8ivvUysS9t/z/f9TK/3/F4+Ket/z/f7f8/3/isf9/8Zjinv9//3//f4r74rGK+/GYxL3/f6fc/3+K+/9/xL23/Ir7id2K+7f8ivtbvv9/id3/f7f8/39bvv9/LZ/Evf9//3//f4r7LZ+K+/9/xL3UysS98ZiOzCzS///D+VHnAvvC/trgpM5B/Ib98Mf2tYD9X4MV50mdv/6bhP//I4IrzueAQrWrf1ic8MqFsUr8B68O+x2Wyq/xgB2XMIJvfm+DeMiyfyXhc37S+TR9xL3UysS9id3EvVu+ivvF44r7t/yn3Lf8xL3UysS9t/yn3P9/ivvUyor74rGK+/GYivv/f8S9/3/inv9//3/UyuKet/z/f8Xj/3+3/P9/4rH/f/GY/3//f6fcxePEvcXjp9zUyuKexePintTK4p7iscS94rHinvGYp9zisafc8ZgV5hniaM1Y4xTlzM26tJfkv7PQ0J3jRrBCssSyYeJcl7TJm5gGsdqZWZgZm5WZA7Qcm9XSDZzW5afcxePEvcXjp9zUyuKexePintTK4p7iscS94rHinvGYxL3xmKfc4rGn3PGYxL0tn6fcxePEvcXjp9zUyuKexePintTK4p7iscS94rHinvGYxL3xmKfc4rGn3PGY"),
+"format": 34896613399,
+"index_count": 558,
+"index_data": PackedByteArray("XgABAAIAXgAAAAEAXwBeAAIAXwACAAMAYAAAAF4AYAAEAAAAMABeAF8AMABgAF4AYQBfAAMAYQADABAADwBhABAADwAQABEADgBhAA8AYgBfAGEADgBiAGEAYgAwAF8ACgBiAA4ACgBjAGIAYwAwAGIABgBjAAoAYwBkADAAZABgADAABgBlAGMAZQBkAGMACABlAAYACAAHAGUABwAxAGUAZQAxAGQABwALADEAZABmAGAAMQBmAGQAZgAEAGAAZgAFAAQAMQBnAGYAZwAFAGYACwBnADEAZwAJAAUACwAMAGcADAAJAGcADAANAAkAaAAzADQAaAA1ADMAaQBoADQAaQA0ADYAagA1AGgAagA3ADUAMgBoAGkAMgBqAGgAawBpADYAawA2ADgAbAAyAGkAbABpAGsAbQA3AGoAbQBAADcAPwBqADIAPwBtAGoAbgAyAGwAbgA/ADIAbwBAAG0AbwBBAEAARgBBAG8ARgBHAEEARQBGAG8AcABvAG0ARQBvAHAAcABtAD8AQgBFAHAAcQBwAD8AQgBwAHEAcQA/AG4AQwBCAHEAQwBxAHIAcgBxAG4ARABDAHIARAByAD4AcgBuAHMAPgByAHMAcwBuAGwAPgBzAD0AcwBsAHQAPQBzAHQAdABsAGsAPQB0ADwAdABrAHUAPAB0AHUAdQBrADgAPAB1ADkAdQA4ADoAOQB1ADoAOQA6ADsAdgATABQAdgASABMAdwB2ABQAdwAUABYAeAASAHYAeAAVABIASAB2AHcASAB4AHYAeQB3ABYAeQAWABkAGAB5ABkAGAAZABoAFwB5ABgAegB3AHkAFwB6AHkAegBIAHcAGwB6ABcAGwB7AHoAewBIAHoAHAB7ABsAewB8AEgAfAB4AEgAHAB9AHsAfQB8AHsAHgB9ABwAHgAdAH0AHQB+AH0AfQB+AHwAHQAhAH4AfAB/AHgAfgB/AHwAfwAVAHgAfwAfABUAfgCAAH8AgAAfAH8AIQCAAH4AgAAgAB8AIQAiAIAAIgAgAIAAIgAjACAASQAmACQASQAlACYAKABJACQAKAAkACkAKgBJACgASgAlAEkAKgBKAEkASgAnACUAKwBKACoAgQAnAEoAKwCBAEoALQCBACsAgQAuACcALQAsAIEALAAuAIEALAAvAC4AggBMAE0AggBLAEwAgwCCAE0AgwBNAE8AhABLAIIAhABRAEsATgCCAIMATgCEAIIAhQCDAE8AhQBPAFgAWQCFAFgAWQBYAFoAVwCFAFkAhgCDAIUAVwCGAIUAhgBOAIMAWwCGAFcAWwCHAIYAhwBOAIYAXACHAFsAhwCIAE4AiACEAE4AXACJAIcAiQCIAIcAXQCJAFwAXQBWAIkAVgCKAIkAiQCKAIgAVgBVAIoAiACLAIQAigCLAIgAiwBRAIQAiwBSAFEAigCMAIsAjABSAIsAVQCMAIoAjABTAFIAVQBQAIwAUABTAIwAUABUAFMA"),
+"lods": [0.14935379, PackedByteArray("AAABAAIAMAAAAAIAMAAEAAAAMAACAAMABQAEADAADgAwAAMACgAwAA4ADgADAA8ADwADABAADwAQABEABgAwAAoABgAFADAABgAxAAUAMQAJAAUABwAxAAYACAAHAAYABwALADEACwAJADEACwAMAAkADAANAAkAMgAzADQAMgA1ADMANgAyADQAMgA3ADUAMgA2ADgAOQAyADgAOQA4ADoAOQA6ADsAPAAyADkAPQAyADwAPQA+ADIAPwA3ADIAPgA/ADIAPwBAADcAQQBAAD8AQgA/AD4AQwBCAD4ARABDAD4AQgBFAD8ARQBBAD8ARQBGAEEARgBHAEEAEgATABQASAASABQASAAVABIASAAUABYASAAfABUAFwBIABYAFwAWABgAGAAWABkAGAAZABoAGwBIABcAHABIABsAHQAfAEgAHAAdAEgAHgAdABwAHQAgAB8AIQAgAB0AIQAiACAAIgAjACAASQAmACQASQAlACYAKABJACQAKAAkACkAKgBJACgASgAlAEkAKgBKAEkASgAnACUAKwBKACoALAAnAEoAKwAsAEoALQAsACsALAAuACcALAAvAC4ASwBMAE0ATgBLAE0ATgBNAE8ATgBQAEsAUABRAEsAUABSAFEAUABTAFIAUABUAFMAVQBQAE4AVgBVAE4AVwBOAE8AVgBOAFcAVwBPAFgAWQBXAFgAWQBYAFoAWwBWAFcAXABWAFsAXQBWAFwA"), 1.0005432, PackedByteArray("AAABAAIAAwAAAAIAAwAEAAAABQAEAAMABgAFAAMABgAHAAUACAAHAAYABwAJAAUABgADAAoACwAJAAcACwAMAAkADAANAAkACgADAA4ADgADAA8ADwADABAADwAQABEAEgATABQAFQASABQAFQAUABYAFwAVABYAFwAWABgAGAAWABkAGAAZABoAGwAVABcAHAAVABsAHAAdABUAHgAdABwAHQAfABUAHQAgAB8AIQAgAB0AIQAiACAAIgAjACAAJAAlACYAJAAnACUAKAAkACkAKgAkACgAKwAkACoALAAnACQAKwAsACQALQAsACsALAAuACcALAAvAC4A")],
+"material": SubResource("StandardMaterial3D_iudn0"),
+"name": "monsterPlantLeaf.001",
+"primitive": 3,
+"uv_scale": Vector4(2.0721474, 2.0526161, 0, 0),
+"vertex_count": 141,
+"vertex_data": PackedByteArray("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")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_bdkgd")
+
+[sub_resource type="Environment" id="Environment_vftoq"]
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_albedo = Color(0.6345012, 0.7366761, 0.7339719, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_pcfam"]
+auto_exposure_enabled = true
+
+[node name="GiganticOffice" unique_id=1854136251 instance=ExtResource("1_qjtm2")]
+script = ExtResource("2_pcfam")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0" unique_id=1731405952]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="0" unique_id=2022341029]
+material = SubResource("ShaderMaterial_p7del")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sideTable" parent="." index="1" unique_id=1368898010]
+transform = Transform3D(0.475, 0, 0, 0, 1, 0, 0, 0, 0.969, 8.06363, 0.3202382, -5.7290955)
+
+[node name="conferenceTable" parent="." index="3" unique_id=397739259]
+transform = Transform3D(-0.016735815, 0, -1.2300085, 0, 1.5334803, 0, 1.080926, 0, -0.019044038, 9.010333, 0.5479222, -1.1296841)
+
+[node name="pot1" parent="." index="10" unique_id=1857649455]
+transform = Transform3D(0.3930737, 0, 0, 0, 0.3930737, 0, 0, 0, 0.3930737, 13.79165, 0.61827415, -4.4191937)
+surface_material_override/0 = SubResource("StandardMaterial3D_6i03c")
+
+[node name="plant2" parent="pot1" index="0" unique_id=894087667]
+transform = Transform3D(-0.0024080167, 0.67773104, -0.32187605, -1.9856672, 0.927197, 0.008971859, 0.3868446, 4.763506, 0.044048797, -0.03816223, 0.9158186, 0.040450096)
+
+[node name="pot3" parent="." index="11" unique_id=2013574565]
+transform = Transform3D(-0.29226747, 0, 0.14150628, 0, 0.32472187, 0, -0.14150628, 0, -0.29226747, 9.707884, 0.20840216, -5.465829)
+surface_material_override/0 = SubResource("StandardMaterial3D_l6fby")
+
+[node name="monsterPlantStem" parent="pot3" index="0" unique_id=916852738]
+transform = Transform3D(0.08863378, -1.0472497, 0.5746225, -0.51042837, -0.35768768, -0.26982662, 0.18306434, -0.49027777, -1.0305567, 0.14888382, 1.5827591, -0.21870232)
+
+[node name="cactus3" parent="." index="13" unique_id=1428853733]
+transform = Transform3D(0.14931926, 0, 0, 0, 0.1132869, 0, 0, 0, 0.1588597, 8.26386, 0.80266327, -5.596527)
+
+[node name="cactus4" parent="." index="14" unique_id=1686921692]
+transform = Transform3D(0.12246145, 0, 0, 0, 0.09291017, 0, 0, 0, 0.13028587, 8.565587, 0.76438326, -5.596527)
+
+[node name="floor3" type="MeshInstance3D" parent="." index="16" unique_id=127872434]
+transform = Transform3D(19.456282, 0, 0, 0, 8.657126, 0, 0, 0, 8.657126, 12.08591, 3.8617556, -1.858958)
+mesh = SubResource("ArrayMesh_wsw4v")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor3" index="0" unique_id=507068241]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor3/StaticBody3D" index="0" unique_id=206654851]
+shape = SubResource("ConcavePolygonShape3D_10ofd")
+
+[node name="pot4" type="MeshInstance3D" parent="." index="20" unique_id=2112550172]
+transform = Transform3D(-0.29226747, 0, 0.14150628, 0, 0.32472187, 0, -0.14150628, 0, -0.29226747, 13.219636, 0.4560229, 1.3973734)
+mesh = SubResource("ArrayMesh_etsa6")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="monsterPlantStem" type="MeshInstance3D" parent="pot4" index="0" unique_id=1736659174]
+transform = Transform3D(0, -1.0771613, 0.5520579, -0.5494597, 7.403673e-08, 1.444586e-07, -7.3688284e-08, -0.55205786, -1.0771614, 0.14283466, 1.5531701, -0.24075985)
+mesh = SubResource("ArrayMesh_ov800")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="pot3_002" parent="." index="24" unique_id=1326454839]
+transform = Transform3D(-0.21805425, 0, -0.03373112, 0, 0.14622349, 0, 0.03373112, 0, -0.21805425, 17.567421, 0.16897911, -6.885587)
+
+[node name="Point_003" parent="." index="25" unique_id=2141180984]
+visible = false
+shadow_enabled = true
+
+[node name="Point" parent="." index="26" unique_id=1257730480]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 10.170611, 3.650529, -2.9699435)
+visible = false
+light_energy = 1.85
+shadow_enabled = true
+
+[node name="pot3_003" parent="." index="30" unique_id=1285477350]
+transform = Transform3D(0.18785048, 0, 0.26487067, 0, 0.32472187, 0, -0.26487067, 0, 0.18785048, 6.5129533, 0.20840216, -5.488444)
+
+[node name="Point2" type="OmniLight3D" parent="." index="32" unique_id=947393537]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 8.8503275, 3.0194135, 0.7099941)
+visible = false
+light_color = Color(0.82571876, 0.91431355, 0.93592316, 1)
+light_energy = 1.99
+shadow_enabled = true
+omni_range = 4096.0
+omni_attenuation = 2.0
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="player" parent="." index="33" unique_id=1849876245 instance=ExtResource("2_apc7y")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 11.232822, 0.7544667, -1.0950875)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="34" unique_id=427385169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 3)
+light_color = Color(0.9017093, 0.8932516, 0.839554, 1)
+light_energy = 8.625
+shadow_enabled = true
+omni_range = 6.725
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." index="35" unique_id=944502759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, -5.18628)
+shadow_enabled = true
+omni_range = 11.642641
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="36" unique_id=413972720]
+environment = SubResource("Environment_vftoq")
+camera_attributes = SubResource("CameraAttributesPractical_pcfam")

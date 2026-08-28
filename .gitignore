@@ -1,24 +1,25 @@
-# Godot 4+ specific
+# Godot 4+
 .godot/
 
-# Android build files
-/android/
+# Godot 3.x
+.import/
 
-# Godot imported files
-*.import
+# Export/build files
+export.cfg
+export_presets.cfg
 
-# Exported builds
-/export/
-*.apk
-*.aab
-*.exe
-*.pck
-*.zip
-
-# OS generated files
+# OS files
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# IDE/editor files
+# IDE / editor files
 .vscode/
 .idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
