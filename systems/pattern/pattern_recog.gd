@@ -3,26 +3,70 @@ extends Control
 
 # to increase speed of pattern as level goes on or anxiety and confidence go up and down 
 @onready var grid: HBoxContainer = $grid
+@onready var cam: Camera2D = $cam
 
 
 var sequence = []
 var player_seq = []
 
-var grid_size := 5
-var seq_len := 5
+var difficulties = {
+	"easy": {
+		"seq_len": 4,
+		"show_time": 0.5,
+		"gap_time": 0.25,
+		"shake_amount": 0.1,
+		"input_time": 10.0,
+		"grid_size": 5,
+	},
 
+	"medium": {
+		"seq_len": 5,
+		"show_time": 0.4,
+		"gap_time": 0.2,
+		"shake_amount": 0.3,
+		"input_time": 7.0,
+		"grid_size": 5,
+	},
+
+	"hard": {
+		"seq_len": 7,
+		"show_time": 0.25,
+		"gap_time": 0.1,
+		"shake_amount": 0.6,
+		"input_time": 5.0,
+		"grid_size": 5,
+	}
+}
+
+var grid_size := 5
+var seq_len
+var shake_amount 
+var gap_time 
+var show_time 
+var curr_diff := "hard"
 # in future to update patience, anxiousness,confidence accordingly 
 var strike := 0
 
 var can_click := false
 
 func _ready() -> void:
+	Global.register_cam(cam)
 	randomize()
+	setup_difficulty()
+
 	gen_sequence()
 	setup_cell()
 	show_pattern()
 
 
+func setup_difficulty() -> void:
+	var settings = difficulties[curr_diff]
+
+	seq_len = settings["seq_len"]
+	shake_amount = settings["shake_amount"]
+	gap_time = settings["gap_time"]
+	show_time = settings["show_time"]
+	grid_size = settings["grid_size"]
 # get colorRect grid 
 func get_cell(x: int, y: int) -> ColorRect:
 	return grid.get_child(x).get_child(y)
@@ -44,22 +88,26 @@ func show_pattern():
 
 	for pos in sequence:
 		var cell = get_cell(pos.x, pos.y)
-		cell.modulate = Color.PALE_VIOLET_RED
-		await get_tree().create_timer(0.4).timeout
-		cell.modulate = Color.WHITE
-		await get_tree().create_timer(0.2).timeout
-	
-	can_click = true
 
+		cell.modulate = Color.PALE_VIOLET_RED
+
+		await get_tree().create_timer(show_time).timeout
+
+		cell.modulate = Color.WHITE
+
+		await get_tree().create_timer(gap_time).timeout
+
+	can_click = true
 
 # create grid for player to click
 func setup_cell():
 	for x in range(grid_size):
 		for y in range(grid_size):
 			var cell = get_cell(x,y)
-			if not cell.gui_input.is_connected(_on_cell_clicked):
-				cell.gui_input.connect(_on_cell_clicked.bind(x, y))
+			var callable = _on_cell_clicked.bind(x, y)
 
+			if not cell.gui_input.is_connected(callable):
+				cell.gui_input.connect(callable)
 
 # handle player input
 func _on_cell_clicked(event: InputEvent, x: int, y: int):
@@ -87,8 +135,17 @@ func check_answer(pos: Vector2i):
 		if player_seq.size() == sequence.size():
 			print("you win")
 	else: 
-		strike += 1
-		print("Incorrect!")
-	
-	if strike >= 3: 
-		print("you loooseeee")
+		wrong_click()
+
+
+func wrong_click() -> void:
+	strike += 1
+	print("Incorrect!")
+	print("start again")
+	Global.shake(0.2)
+	#await get_tree().create_timer(4).timeout
+	#gen_sequence()
+	#show_pattern()
+#
+	#if strike >= 3: 
+		#print("you loooseeee")

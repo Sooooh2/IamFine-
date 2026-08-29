@@ -14,6 +14,10 @@ config/name="IamFine?"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://dv14jg4kdm02l"
+
 [global_group]
 
 player=""

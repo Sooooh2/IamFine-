@@ -1,8 +1,10 @@
 extends CharacterBody3D
 
+signal dialogue_requested(dialogue: Array[String])
+
 @onready var cam_rig: Node3D = $camrig
-@onready var startCam: Camera3D = $camrig2/cam
-@onready var mainCam: Camera3D = $camrig/cam
+@onready var start_cam: Camera3D = $camrig2/cam
+@onready var main_cam: Camera3D = $camrig/cam
 @onready var sprite_3d: Sprite3D = $Sprite3D
 
 @export var mouse_sens := 0.001
@@ -10,11 +12,17 @@ extends CharacterBody3D
 var pitch := 0.0
 var intro := true
 
+var first_talk: Array[String] = [
+	"Okay, we are here now.........",
+	"I am going to be just fine.",
+	"Just breathe in......... breathe out..........",
+	"Everything is going to be just fine."
+]
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-
-	introthing()
+	intro_thing()
 
 
 func _input(event: InputEvent) -> void:
@@ -41,12 +49,10 @@ func _input(event: InputEvent) -> void:
 		cam_rig.rotation.x = pitch
 
 
-func introthing() -> void:
+func intro_thing() -> void:
 	sprite_3d.visible = true
-	startCam.make_current()
+	start_cam.make_current()
 
 	await get_tree().create_timer(1.0).timeout
 
-	intro = false
-	sprite_3d.visible = false
-	mainCam.make_current()
+	dialogue_requested.emit(first_talk)

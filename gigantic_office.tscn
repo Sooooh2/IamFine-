@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://co1h6t084fks2" path="res://assets/textures/Glossy Cream tiles with white grout_Opacity.png" id="8_qj63g"]
 [ext_resource type="Texture2D" uid="uid://cvocfoqxp3l3m" path="res://assets/textures/Glossy Cream tiles with white grout_Metallic.png" id="9_vftoq"]
 [ext_resource type="Texture2D" uid="uid://cptl580vee6l4" path="res://assets/textures/Glossy Cream tiles with white grout_Normal.png" id="10_pcfam"]
+[ext_resource type="PackedScene" uid="uid://cgkvoyuujogo3" path="res://systems/dialogue.tscn" id="13_pcfam"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p7del"]
 shader = ExtResource("5_h38m5")
@@ -421,7 +422,6 @@ volumetric_fog_density = 0.0
 volumetric_fog_albedo = Color(0.6345012, 0.7366761, 0.7339719, 1)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_pcfam"]
-auto_exposure_enabled = true
 
 [node name="GiganticOffice" unique_id=1854136251 instance=ExtResource("1_qjtm2")]
 script = ExtResource("2_pcfam")
@@ -489,7 +489,7 @@ metadata/extras = {
 }
 
 [node name="pot3_002" parent="." index="24" unique_id=1326454839]
-transform = Transform3D(-0.21805425, 0, -0.03373112, 0, 0.14622349, 0, 0.03373112, 0, -0.21805425, 17.567421, 0.16897911, -6.885587)
+transform = Transform3D(-0.21096756, 0.03697544, -0.032634992, 0.05513924, 0.14147128, 0.008529593, 0.033731237, -2.1788997e-09, -0.21805422, 17.567421, 0.16658229, -6.885587)
 
 [node name="Point_003" parent="." index="25" unique_id=2141180984]
 visible = false
@@ -516,8 +516,8 @@ metadata/extras = {
 "yp_decal": {}
 }
 
-[node name="player" parent="." index="33" unique_id=1849876245 instance=ExtResource("2_apc7y")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 11.232822, 0.7544667, -1.0950875)
+[node name="player" parent="." index="33" unique_id=1849876245 groups=["player"] instance=ExtResource("2_apc7y")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 11.032823, 0.4544667, -1.1950876)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="34" unique_id=427385169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 3)
@@ -534,3 +534,5 @@ omni_range = 11.642641
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="36" unique_id=413972720]
 environment = SubResource("Environment_vftoq")
 camera_attributes = SubResource("CameraAttributesPractical_pcfam")
+
+[node name="dialogue" parent="." index="37" unique_id=1851762449 instance=ExtResource("13_pcfam")]

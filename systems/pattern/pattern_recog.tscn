@@ -13,10 +13,10 @@ script = ExtResource("1_7fln1")
 
 [node name="grid" type="HBoxContainer" parent="." unique_id=1968077915]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 39.0
-offset_right = 471.0
-offset_bottom = 426.0
+offset_left = 269.0
+offset_top = 58.0
+offset_right = 690.0
+offset_bottom = 445.0
 
 [node name="col1" type="VBoxContainer" parent="grid" unique_id=984484990]
 layout_mode = 2
@@ -138,4 +138,5 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[connection signal="gui_input" from="grid/col1/c1" to="." method="_on_cell_clicked"]
+[node name="cam" type="Camera2D" parent="." unique_id=644989580]
+position = Vector2(575, 325)

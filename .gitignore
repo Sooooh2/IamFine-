@@ -1,25 +1,17 @@
-# Godot 4+
+# Godot generated files
 .godot/
-
-# Godot 3.x
 .import/
 
-# Export/build files
-export.cfg
-export_presets.cfg
-
-# OS files
+# OS
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# IDE / editor files
+# IDE
 .vscode/
 .idea/
 
-# Logs
+# Logs / temporary files
 *.log
-
-# Temporary files
 *.tmp
 *.temp

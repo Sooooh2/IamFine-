@@ -11,7 +11,7 @@ height = 1.6074219
 script = ExtResource("1_4flbx")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1946056751]
-transform = Transform3D(0.565, 0, 0, 0, 0.565, 0, 0, 0, 0.565, 0, 0.12404662, 0)
+transform = Transform3D(0.325, 0, 0, 0, 0.325, 0, 0, 0, 0.325, 0, 0.12404662, 0)
 texture_filter = 0
 texture = ExtResource("2_onrkg")
 

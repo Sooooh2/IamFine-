@@ -5,21 +5,26 @@
 [node name="dialogue" type="CanvasLayer" unique_id=1851762449]
 script = ExtResource("1_soc1h")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1009365704]
-offset_right = 78.0
-offset_bottom = 45.0
-color = Color(0.35906908, 0.35906908, 0.35906908, 1)
-
 [node name="Panel" type="Panel" parent="." unique_id=325474749]
-offset_right = 77.0
-offset_bottom = 45.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -249.5
+offset_top = -94.0
+offset_right = 249.5
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="." unique_id=646773694]
-offset_left = 3.0
-offset_top = 5.0
-offset_right = 75.0
-offset_bottom = 40.0
+[node name="Label" type="Label" parent="Panel" unique_id=646773694]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 6
 
 [node name="Timer" type="Timer" parent="." unique_id=1836099385]
