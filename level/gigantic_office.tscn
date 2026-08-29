@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://b0r3d4ydhnftd"]
 
 [ext_resource type="PackedScene" uid="uid://bjtgs6wpo5s0n" path="res://assets/GiganticOffice.blend" id="1_qjtm2"]
-[ext_resource type="PackedScene" uid="uid://b7r8ryq2rod4w" path="res://player.tscn" id="2_apc7y"]
+[ext_resource type="PackedScene" uid="uid://b7r8ryq2rod4w" path="res://level/player.tscn" id="2_apc7y"]
 [ext_resource type="Texture2D" uid="uid://dsemdtq1xtu8u" path="res://assets/pot!Main.png" id="2_p7del"]
-[ext_resource type="Script" uid="uid://vi0juayx3iui" path="res://level.gd" id="2_pcfam"]
+[ext_resource type="Script" uid="uid://vi0juayx3iui" path="res://level/level.gd" id="2_pcfam"]
 [ext_resource type="Texture2D" uid="uid://1a48kum775xw" path="res://assets/potIMG.png" id="3_c6ked"]
 [ext_resource type="Texture2D" uid="uid://clgmklap2f7vn" path="res://assets/pot!MainEdge.png" id="3_h38m5"]
 [ext_resource type="Texture2D" uid="uid://dgtdyhwxmrl5c" path="res://assets/normPotImg.png" id="4_6i03c"]
