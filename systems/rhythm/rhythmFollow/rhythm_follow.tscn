@@ -1,0 +1,235 @@
+[gd_scene format=3 uid="uid://cueo1q768ijsd"]
+
+[ext_resource type="Script" uid="uid://c22rydbo1vj6u" path="res://systems/rhythm/rhythmFollow/rhythm_follow.gd" id="1_243t2"]
+[ext_resource type="Script" uid="uid://b0ndafrrvctr" path="res://systems/rhythm/pulse_follow.gd" id="2_l2xpw"]
+[ext_resource type="Shader" uid="uid://cchfsfir2pe8u" path="res://systems/rhythm/rhythmFollow/track.gdshader" id="3_wnvkt"]
+[ext_resource type="Script" uid="uid://beakunfqomg7x" path="res://systems/rhythm/rhythmFollow/track.gd" id="4_03ir1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l2xpw"]
+
+[sub_resource type="Curve2D" id="Curve2D_nmouh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 46.026455, 170, -63.875847, 76.62168, 63.875847, -76.62168, 296, 95, -112.32156, -73.328316, 112.32156, 73.328316, 580, 76, 99.6619, -19.346355, -99.6619, 19.346355, 553, 314, 4.425563, 27.398308, -4.425563, -27.398308, 391, 220, -98.91297, -18.014465, 98.91297, 18.014465, 526, 148, -94.73668, -40.53415, 94.73668, 40.53415, 700, 243, 0, 0, 0, 0, 810, 179)
+}
+point_count = 8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2xpw"]
+size = Vector2(2.287094, 203.26761)
+
+[sub_resource type="Curve2D" id="Curve2D_l2xpw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 146, 114, 0, 0, 0, 0, 986, 112)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_lcn0k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 128, 201, -121, -9.68, 121, 9.68, 298, 355, 1.1384716, 75.37196, -1.1384716, -75.37196, 486, 216, -37.21473, 47.527252, 37.21473, -47.527252, 496, 48, -54.01581, -12.997377, 54.01581, 12.997377, 634, -7, 38.52352, -47.92038, -38.52352, 47.92038, 702, 128, 9.100086, -47.290257, -9.100086, 47.290257, 606, 271, 41.255806, -67.55301, -41.255806, 67.55301, 626, 453, 66.720795, 38.03248, -66.720795, -38.03248, 408, 464, -38.72, 68.97, 38.72, -68.97, 352, 253, -96.65381, -22.48777, 96.65381, 22.48777, 562, 172, -11.110001, -54.34, 11.110001, 54.34, 704, 298, -62.44474, -46.834206, 62.44474, 46.834206, 746, 461, -12.432747, 71.37248, 12.432747, -71.37248, 978, 410, 40.091698, 26.51965, -40.091698, -26.51965, 863, 280, -2.5931349, 48.180763, 2.5931349, -48.180763, 789, 167, -88.69595, 2.994709, 88.69595, -2.994709, 904, 82, 0, 0, 0, 0, 1067, 191)
+}
+point_count = 18
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqw5b"]
+shader = ExtResource("3_wnvkt")
+shader_parameter/track_color = Color(0.37964982, 0.065548584, 0.03319987, 1)
+shader_parameter/glow_color = Color(0.8144234, 0.6469723, 7.70092e-07, 1)
+shader_parameter/glow_strength = 5.0
+shader_parameter/pulse_speed = 1.4890000707275
+shader_parameter/end_thinness = 0.1270000060325
+shader_parameter/glare_strength = 4.69200022287
+shader_parameter/glare_width = 0.46700002148398
+
+[sub_resource type="Curve2D" id="Curve2D_wnvkt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 196, 63, 0, -62.154217, 0, 62.154217, 128, 147, -88.79174, 2.7320535, 88.79174, -2.7320535, 275, 293, -160.55206, 9.852915, 160.55206, -9.852915, 518, 79, -64.18574, -81.96478, 64.18574, 81.96478, 791, 155, 7.2568283, -62.486965, -7.2568283, 62.486965, 865, 360, 48.49395, 34.833683, -48.49395, -34.833683, 688, 372, 81.48349, 39.478165, -81.48349, -39.478165, 613, 171, 28.071852, -57.509727, -28.071852, 57.509727, 443, 270, -46.103405, -40.092888, 46.103405, 40.092888, 488, 438, -37.36083, 15.231199, 37.36083, -15.231199, 592, 457, -60.89615, -39.146957, 60.89615, 39.146957, 706, 428, -90.37912, -3.7471962, 90.37912, 3.7471962, 829, 545, 1.0896988, 69.14842, -1.0896988, -69.14842, 972, 390, 86.25914, 36.079746, -86.25914, -36.079746, 874, 189, -28.642326, 27.18599, 28.642326, -27.18599, 836, 60, -81, -50, 81, 50, 1019, 60, 15.90211, -93.81765, -15.90211, 93.81765, 1076, 265, 18.751442, -122.68713, -18.751442, 122.68713, 1102, 463, 80.81765, -9.248558, -80.81765, 9.248558, 885, 617, 75.752396, 19.248558, -75.752396, -19.248558, 662, 547, 115.491356, 9.93474, -115.491356, -9.93474, 420, 616, -26.078693, 65.81765, 26.078693, -65.81765, 301, 483, -31.666985, 70.1641, 31.666985, -70.1641, 420, 425, 68.30134, -33.529747, -68.30134, 33.529747, 252, 324, -48.431858, -67.059494, 48.431858, 67.059494, 167, 556, 0, 0, 0, 0, 260, 595)
+}
+point_count = 27
+
+[node name="rhythmFollow" type="Control" unique_id=349154114]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_243t2")
+
+[node name="track" type="ColorRect" parent="." unique_id=145506961]
+visible = false
+layout_mode = 0
+offset_left = 29.0
+offset_top = 6.0
+offset_right = 533.0
+offset_bottom = 209.0
+color = Color(0.5449743, 0.54497427, 0.54497427, 1)
+
+[node name="cam" type="Camera2D" parent="." unique_id=1295455677]
+position = Vector2(579, 324)
+
+[node name="mid" type="Path2D" parent="." unique_id=1081203358]
+visible = false
+material = SubResource("CanvasItemMaterial_l2xpw")
+position = Vector2(-0.1485405, 0)
+scale = Vector2(1.0026525, 1)
+curve = SubResource("Curve2D_nmouh")
+
+[node name="line" type="Line2D" parent="mid" unique_id=1974716784]
+
+[node name="hitFollow" type="PathFollow2D" parent="mid" unique_id=1466500948]
+position = Vector2(46.026455, 170)
+rotation = 0.008713878
+
+[node name="hitZone" type="ColorRect" parent="mid/hitFollow" unique_id=2098608997]
+offset_left = -0.28926086
+offset_top = -101.87415
+offset_right = 3.3590164
+offset_bottom = 96.08306
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="mid/hitFollow/hitZone" unique_id=917835825]
+position = Vector2(-0.7115936, 2.400547)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mid/hitFollow/hitZone/Area2D" unique_id=654555335]
+position = Vector2(2.4355164, 99.16901)
+shape = SubResource("RectangleShape2D_l2xpw")
+
+[node name="pulseFollow" type="PathFollow2D" parent="mid" unique_id=787177690]
+visible = false
+position = Vector2(46.026455, 170)
+rotation = 0.008713878
+script = ExtResource("2_l2xpw")
+
+[node name="pulse" type="Control" parent="mid/pulseFollow" unique_id=1526115377]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 39.701504
+offset_top = 179.50987
+offset_right = 79.70151
+offset_bottom = 219.50987
+
+[node name="simple" type="Path2D" parent="." unique_id=2065255724]
+visible = false
+position = Vector2(-17, 48)
+curve = SubResource("Curve2D_l2xpw")
+
+[node name="line" type="Line2D" parent="simple" unique_id=1592835126]
+
+[node name="hitFollow" type="PathFollow2D" parent="simple" unique_id=1035300498]
+position = Vector2(146, 114)
+rotation = -0.002380948
+
+[node name="hitZone" type="ColorRect" parent="simple/hitFollow" unique_id=1444749028]
+offset_left = -0.28926086
+offset_top = -101.87415
+offset_right = 3.3590164
+offset_bottom = 96.08306
+
+[node name="Area2D" type="Area2D" parent="simple/hitFollow/hitZone" unique_id=885187858]
+position = Vector2(-0.7115936, 2.400547)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="simple/hitFollow/hitZone/Area2D" unique_id=722723767]
+position = Vector2(2.4355164, 99.16901)
+shape = SubResource("RectangleShape2D_l2xpw")
+
+[node name="pulseFollow" type="PathFollow2D" parent="simple" unique_id=401065646]
+visible = false
+position = Vector2(146, 114)
+rotation = -0.002380948
+script = ExtResource("2_l2xpw")
+
+[node name="pulse" type="Control" parent="simple/pulseFollow" unique_id=1290033184]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 39.701504
+offset_top = 179.50987
+offset_right = 79.70151
+offset_bottom = 219.50987
+
+[node name="hard" type="Path2D" parent="." unique_id=1642530800]
+visible = false
+position = Vector2(-16, 24)
+curve = SubResource("Curve2D_lcn0k")
+
+[node name="track" type="MeshInstance2D" parent="hard" unique_id=754451803]
+material = SubResource("ShaderMaterial_bqw5b")
+script = ExtResource("4_03ir1")
+width = 5.0
+
+[node name="hitFollow" type="PathFollow2D" parent="hard" unique_id=1354556025]
+position = Vector2(128, 201)
+rotation = 1.2434852
+
+[node name="hitZone" type="ColorRect" parent="hard/hitFollow" unique_id=2019798318]
+offset_left = -0.28926086
+offset_top = -101.87415
+offset_right = 3.3590164
+offset_bottom = 96.08306
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="hard/hitFollow/hitZone" unique_id=2047615950]
+position = Vector2(-0.7115936, 2.400547)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hard/hitFollow/hitZone/Area2D" unique_id=1333407003]
+position = Vector2(2.4355164, 99.16901)
+shape = SubResource("RectangleShape2D_l2xpw")
+
+[node name="pulseFollow" type="PathFollow2D" parent="hard/hitFollow" unique_id=1432580364]
+visible = false
+position = Vector2(46.026455, 170)
+rotation = 0.008713878
+script = ExtResource("2_l2xpw")
+
+[node name="pulse" type="Control" parent="hard/hitFollow/pulseFollow" unique_id=252344956]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 39.701504
+offset_top = 179.50987
+offset_right = 79.70151
+offset_bottom = 219.50987
+
+[node name="harder" type="Path2D" parent="." unique_id=1088829335]
+curve = SubResource("Curve2D_wnvkt")
+
+[node name="track" type="MeshInstance2D" parent="harder" unique_id=1735837450]
+material = SubResource("ShaderMaterial_bqw5b")
+script = ExtResource("4_03ir1")
+width = 5.0
+
+[node name="hitFollow" type="PathFollow2D" parent="harder" unique_id=364821546]
+position = Vector2(196, 63)
+rotation = 2.830746
+
+[node name="hitZone" type="ColorRect" parent="harder/hitFollow" unique_id=578036110]
+offset_left = -2.973053
+offset_top = -98.636536
+offset_right = 0.67523193
+offset_bottom = 99.32068
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="harder/hitFollow/hitZone" unique_id=486737944]
+position = Vector2(-0.7115936, 2.400547)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="harder/hitFollow/hitZone/Area2D" unique_id=1711982586]
+position = Vector2(2.4355164, 99.16901)
+shape = SubResource("RectangleShape2D_l2xpw")
+
+[node name="pulseFollow" type="PathFollow2D" parent="harder/hitFollow" unique_id=1411069961]
+visible = false
+position = Vector2(-18.177338, 299.2376)
+rotation = 1.2521992
+script = ExtResource("2_l2xpw")
+
+[node name="pulse" type="Control" parent="harder/hitFollow/pulseFollow" unique_id=322792352]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 39.701504
+offset_top = 179.50987
+offset_right = 79.70151
+offset_bottom = 219.50987
