@@ -28,24 +28,12 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if intro:
 		return
-
 	if event is InputEventMouseMotion:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
 		cam_rig.rotation.y -= event.relative.x * mouse_sens
-		cam_rig.rotation.y = clamp(
-			cam_rig.rotation.y,
-			deg_to_rad(-50),
-			deg_to_rad(50)
-		)
-
+		cam_rig.rotation.y = clamp(cam_rig.rotation.y,deg_to_rad(-50),deg_to_rad(50))
 		pitch -= event.relative.y * mouse_sens
-		pitch = clamp(
-			pitch,
-			deg_to_rad(-80),
-			deg_to_rad(80)
-		)
-
+		pitch = clamp(pitch,deg_to_rad(-80),deg_to_rad(80))
 		cam_rig.rotation.x = pitch
 
 

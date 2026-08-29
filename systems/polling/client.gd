@@ -34,7 +34,6 @@ func _ready():
 
 	label.visible = false
 	anim.play("womanIdle")
-
 	$interactionArea.body_entered.connect(_on_interaction_area_body_entered)
 	$interactionArea.body_exited.connect(_on_interaction_area_body_exited)
 
@@ -42,7 +41,6 @@ func _ready():
 func interact():
 
 	interacted.emit()
-
 	if first_interaction:
 		first_interaction = false
 		dialogue_requested.emit(first_talk.pick_random())
@@ -59,6 +57,5 @@ func _on_interaction_area_body_entered(body: Node2D) -> void:
 func _on_interaction_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		label.visible = false
-
 		if body.nearby_interactable == self:
 			body.nearby_interactable = null

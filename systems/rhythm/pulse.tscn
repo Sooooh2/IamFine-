@@ -1,11 +1,24 @@
-[gd_scene format=3 uid="uid://bfvojp6wvap0a"]
+[gd_scene format=3 uid="uid://q7h2l105l0j4"]
 
-[ext_resource type="Script" uid="uid://dubh5o5vnewwb" path="res://systems/rhythm/pulse.gd" id="1_558oa"]
+[ext_resource type="Script" uid="uid://e30maw587ixv" path="res://systems/rhythm/pulseArea_2d.gd" id="1_5psxd"]
+[ext_resource type="Script" uid="uid://ckj7xicxi53s0" path="res://systems/rhythm/pulse.gd" id="1_558oa"]
 
-[node name="pulse" type="ColorRect" unique_id=2034165140]
-offset_left = 415.0
-offset_top = 76.0
-offset_right = 455.0
-offset_bottom = 116.0
-color = Color(0.95622, 0.36229095, 0.25771797, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyt04"]
+size = Vector2(40, 40)
+
+[node name="Pulse" type="Node2D" unique_id=1034337448]
 script = ExtResource("1_558oa")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=642360217]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1060139821 groups=["pulse"]]
+position = Vector2(-20, -20)
+script = ExtResource("1_5psxd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=161214748]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_kyt04")

@@ -10,13 +10,10 @@ func _ready() -> void:
 func show_msg(message: String) -> void:
 	label.visible = true
 	label.text = ""
-
 	for character in message:
 		label.text += character
 		await get_tree().create_timer(text_speed).timeout
-
 	await timer.timeout
-
 	label.visible = false
 
 

@@ -14,10 +14,8 @@ func _ready() -> void:
 func intro() -> void:
 	if !is_intro:
 		return
-
 	print("start of the game")
-	
-	
+
 
 func _on_player_dialogue_requested(dialogues: Array) -> void:
 	for d in dialogues:
