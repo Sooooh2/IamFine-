@@ -53,17 +53,13 @@ func _input(event: InputEvent) -> void:
 
 func intro_thing() -> void:
 	sprite_3d.visible = true
-
-
 	await get_tree().create_timer(1.0).timeout
-
 	dialogue_requested.emit(first_talk)
 
 
 func finish_intro() -> void:
 	intro = false
-	sprite_3d.visible = false
-	main_cam.make_current()
+
 
 
 func _on_minigame_started(type: String) -> void:

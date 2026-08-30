@@ -32,8 +32,10 @@ grow_vertical = 2
 size_flags_vertical = 6
 
 [node name="msgBox" type="Panel" parent="." unique_id=1303192626]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 23.0
+offset_top = 571.0
+offset_right = 297.0
+offset_bottom = 617.0
 
 [node name="msg" type="RichTextLabel" parent="msgBox" unique_id=429678573]
 layout_mode = 0
