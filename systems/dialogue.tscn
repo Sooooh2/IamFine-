@@ -5,7 +5,11 @@
 [node name="dialogue" type="CanvasLayer" unique_id=1851762449]
 script = ExtResource("1_soc1h")
 
-[node name="Panel" type="Panel" parent="." unique_id=325474749]
+[node name="Timer" type="Timer" parent="." unique_id=1836099385]
+wait_time = 0.5
+one_shot = true
+
+[node name="dialogueBox" type="Panel" parent="." unique_id=325474749]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -18,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Panel" unique_id=646773694]
+[node name="dialogue" type="Label" parent="dialogueBox" unique_id=646773694]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,8 +31,13 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 6
 
-[node name="Timer" type="Timer" parent="." unique_id=1836099385]
-wait_time = 0.5
-one_shot = true
+[node name="msgBox" type="Panel" parent="." unique_id=1303192626]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="msg" type="RichTextLabel" parent="msgBox" unique_id=429678573]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

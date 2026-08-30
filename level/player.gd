@@ -21,26 +21,63 @@ var first_talk: Array[String] = [
 
 
 func _ready() -> void:
+	start_cam.make_current()
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	
 	intro_thing()
 
 
 func _input(event: InputEvent) -> void:
 	if intro:
 		return
+
 	if event is InputEventMouseMotion:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 		cam_rig.rotation.y -= event.relative.x * mouse_sens
-		cam_rig.rotation.y = clamp(cam_rig.rotation.y,deg_to_rad(-50),deg_to_rad(50))
+		cam_rig.rotation.y = clamp(
+			cam_rig.rotation.y,
+			deg_to_rad(-50),
+			deg_to_rad(50)
+		)
+
 		pitch -= event.relative.y * mouse_sens
-		pitch = clamp(pitch,deg_to_rad(-80),deg_to_rad(80))
+		pitch = clamp(
+			pitch,
+			deg_to_rad(-80),
+			deg_to_rad(80)
+		)
+
 		cam_rig.rotation.x = pitch
 
 
 func intro_thing() -> void:
 	sprite_3d.visible = true
-	start_cam.make_current()
+
 
 	await get_tree().create_timer(1.0).timeout
 
 	dialogue_requested.emit(first_talk)
+
+
+func finish_intro() -> void:
+	intro = false
+	sprite_3d.visible = false
+	main_cam.make_current()
+
+
+func _on_minigame_started(type: String) -> void:
+	if type == "pattern":
+		shift_camera_left()
+
+
+func shift_camera_left() -> void:
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(
+		start_cam,
+		"position:x",
+		start_cam.position.x - 0.5,
+		0.5
+	)

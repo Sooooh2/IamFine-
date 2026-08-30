@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://cueo1q768ijsd"]
 
 [ext_resource type="Script" uid="uid://c22rydbo1vj6u" path="res://systems/rhythm/rhythmFollow/rhythm_follow.gd" id="1_243t2"]
+[ext_resource type="Script" uid="uid://dvw2yotwvlk1p" path="res://systems/rhythm/rhythmFollow/mid.gd" id="2_avfvq"]
 [ext_resource type="Script" uid="uid://b0ndafrrvctr" path="res://systems/rhythm/pulse_follow.gd" id="2_l2xpw"]
+[ext_resource type="Script" uid="uid://cst2i5378b1gb" path="res://systems/rhythm/rhythmFollow/path.gd" id="3_a3t8o"]
 [ext_resource type="Shader" uid="uid://cchfsfir2pe8u" path="res://systems/rhythm/rhythmFollow/track.gdshader" id="3_wnvkt"]
 [ext_resource type="Script" uid="uid://beakunfqomg7x" path="res://systems/rhythm/rhythmFollow/track.gd" id="4_03ir1"]
+[ext_resource type="Shader" uid="uid://bsm6l1sdk8k68" path="res://assets/visu.gdshader" id="5_03ir1"]
+[ext_resource type="Script" uid="uid://c2mnvcet4son8" path="res://systems/rhythm/rhythmFollow/harder.gd" id="5_a3t8o"]
+[ext_resource type="Shader" uid="uid://d1h5nkyrqwy7y" path="res://systems/rhythm/rhythmFollow/particles.gdshader" id="5_bqw5b"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l2xpw"]
 
@@ -12,6 +17,25 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 46.026455, 170, -63.875847, 76.62168, 63.875847, -76.62168, 296, 95, -112.32156, -73.328316, 112.32156, 73.328316, 580, 76, 99.6619, -19.346355, -99.6619, 19.346355, 553, 314, 4.425563, 27.398308, -4.425563, -27.398308, 391, 220, -98.91297, -18.014465, 98.91297, 18.014465, 526, 148, -94.73668, -40.53415, 94.73668, 40.53415, 700, 243, 0, 0, 0, 0, 810, 179)
 }
 point_count = 8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqw5b"]
+shader = ExtResource("3_wnvkt")
+shader_parameter/track_color = Color(0.776011, 0.2541579, 0.33872765, 1)
+shader_parameter/center_transparency = 0.866000041135
+shader_parameter/edge_width = 0.29000001307648005
+shader_parameter/glow_strength = 10.0
+shader_parameter/end_thinness = 0.062000002945
+shader_parameter/wave_count = 10.0
+shader_parameter/pulse_speed = 3.0270001437825
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a3t8o"]
+shader = ExtResource("5_bqw5b")
+shader_parameter/particle_color = Color(0.3, 0.7, 1, 1)
+shader_parameter/glow_strength = 2.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a3t8o"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2xpw"]
 size = Vector2(2.287094, 203.26761)
@@ -28,21 +52,27 @@ _data = {
 }
 point_count = 18
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqw5b"]
-shader = ExtResource("3_wnvkt")
-shader_parameter/track_color = Color(0.37964982, 0.065548584, 0.03319987, 1)
-shader_parameter/glow_color = Color(0.8144234, 0.6469723, 7.70092e-07, 1)
-shader_parameter/glow_strength = 5.0
-shader_parameter/pulse_speed = 1.4890000707275
-shader_parameter/end_thinness = 0.1270000060325
-shader_parameter/glare_strength = 4.69200022287
-shader_parameter/glare_width = 0.46700002148398
-
 [sub_resource type="Curve2D" id="Curve2D_wnvkt"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 196, 63, 0, -62.154217, 0, 62.154217, 128, 147, -88.79174, 2.7320535, 88.79174, -2.7320535, 275, 293, -160.55206, 9.852915, 160.55206, -9.852915, 518, 79, -64.18574, -81.96478, 64.18574, 81.96478, 791, 155, 7.2568283, -62.486965, -7.2568283, 62.486965, 865, 360, 48.49395, 34.833683, -48.49395, -34.833683, 688, 372, 81.48349, 39.478165, -81.48349, -39.478165, 613, 171, 28.071852, -57.509727, -28.071852, 57.509727, 443, 270, -46.103405, -40.092888, 46.103405, 40.092888, 488, 438, -37.36083, 15.231199, 37.36083, -15.231199, 592, 457, -60.89615, -39.146957, 60.89615, 39.146957, 706, 428, -90.37912, -3.7471962, 90.37912, 3.7471962, 829, 545, 1.0896988, 69.14842, -1.0896988, -69.14842, 972, 390, 86.25914, 36.079746, -86.25914, -36.079746, 874, 189, -28.642326, 27.18599, 28.642326, -27.18599, 836, 60, -81, -50, 81, 50, 1019, 60, 15.90211, -93.81765, -15.90211, 93.81765, 1076, 265, 18.751442, -122.68713, -18.751442, 122.68713, 1102, 463, 80.81765, -9.248558, -80.81765, 9.248558, 885, 617, 75.752396, 19.248558, -75.752396, -19.248558, 662, 547, 115.491356, 9.93474, -115.491356, -9.93474, 420, 616, -26.078693, 65.81765, 26.078693, -65.81765, 301, 483, -31.666985, 70.1641, 31.666985, -70.1641, 420, 425, 68.30134, -33.529747, -68.30134, 33.529747, 252, 324, -48.431858, -67.059494, 48.431858, 67.059494, 167, 556, 0, 0, 0, 0, 260, 595)
 }
 point_count = 27
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_03ir1"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+scale_max = 11.2
+turbulence_enabled = true
+turbulence_noise_strength = 0.5
+turbulence_noise_scale = 0.0
+turbulence_noise_speed_random = 0.34
+turbulence_influence_max = 0.120000005
+turbulence_initial_displacement_min = 12.500002
+turbulence_initial_displacement_max = 12.500002
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfcci"]
+shader = ExtResource("5_03ir1")
+shader_parameter/pixel_size = 2.0
 
 [node name="rhythmFollow" type="Control" unique_id=349154114]
 layout_mode = 3
@@ -70,11 +100,25 @@ color = Color(0.5449743, 0.54497427, 0.54497427, 1)
 position = Vector2(579, 324)
 
 [node name="mid" type="Path2D" parent="." unique_id=1081203358]
-visible = false
 material = SubResource("CanvasItemMaterial_l2xpw")
-position = Vector2(-0.1485405, 0)
-scale = Vector2(1.0026525, 1)
+position = Vector2(697, 122)
+scale = Vector2(0.481, 0.48)
 curve = SubResource("Curve2D_nmouh")
+script = ExtResource("2_avfvq")
+
+[node name="track" type="MeshInstance2D" parent="mid" unique_id=601884988]
+material = SubResource("ShaderMaterial_bqw5b")
+script = ExtResource("4_03ir1")
+width = 5.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="mid" unique_id=970488238]
+visible = false
+material = SubResource("ShaderMaterial_a3t8o")
+position = Vector2(198, 65)
+emitting = false
+amount = 100
+lifetime = 11.2
+process_material = SubResource("ParticleProcessMaterial_a3t8o")
 
 [node name="line" type="Line2D" parent="mid" unique_id=1974716784]
 
@@ -152,13 +196,24 @@ offset_bottom = 219.50987
 
 [node name="hard" type="Path2D" parent="." unique_id=1642530800]
 visible = false
-position = Vector2(-16, 24)
+position = Vector2(59.382324, 17.76231)
+scale = Vector2(0.41107562, 0.410038)
 curve = SubResource("Curve2D_lcn0k")
+script = ExtResource("3_a3t8o")
 
 [node name="track" type="MeshInstance2D" parent="hard" unique_id=754451803]
 material = SubResource("ShaderMaterial_bqw5b")
 script = ExtResource("4_03ir1")
-width = 5.0
+width = 25.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="hard" unique_id=968182294]
+visible = false
+material = SubResource("ShaderMaterial_a3t8o")
+position = Vector2(198, 65)
+emitting = false
+amount = 100
+lifetime = 11.2
+process_material = SubResource("ParticleProcessMaterial_a3t8o")
 
 [node name="hitFollow" type="PathFollow2D" parent="hard" unique_id=1354556025]
 position = Vector2(128, 201)
@@ -194,12 +249,21 @@ offset_right = 79.70151
 offset_bottom = 219.50987
 
 [node name="harder" type="Path2D" parent="." unique_id=1088829335]
+visible = false
 curve = SubResource("Curve2D_wnvkt")
+script = ExtResource("5_a3t8o")
 
 [node name="track" type="MeshInstance2D" parent="harder" unique_id=1735837450]
 material = SubResource("ShaderMaterial_bqw5b")
 script = ExtResource("4_03ir1")
-width = 5.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="harder" unique_id=2015686209]
+visible = false
+material = SubResource("ShaderMaterial_a3t8o")
+position = Vector2(198, 65)
+amount = 100
+lifetime = 11.2
+process_material = SubResource("ParticleProcessMaterial_03ir1")
 
 [node name="hitFollow" type="PathFollow2D" parent="harder" unique_id=364821546]
 position = Vector2(196, 63)
@@ -233,3 +297,16 @@ offset_left = 39.701504
 offset_top = 179.50987
 offset_right = 79.70151
 offset_bottom = 219.50987
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1067699535]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1974279802]
+visible = false
+material = SubResource("ShaderMaterial_wfcci")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

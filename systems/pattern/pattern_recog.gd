@@ -1,6 +1,8 @@
 extends Control
 
 
+signal minigame_finished(confidence_change: float, anxiety_change: float)
+
 # to increase speed of pattern as level goes on or anxiety and confidence go up and down 
 @onready var grid: HBoxContainer = $grid
 @onready var cam: Camera2D = $cam
@@ -61,12 +63,13 @@ func _ready() -> void:
 
 func setup_difficulty() -> void:
 	var settings = difficulties[curr_diff]
-
 	seq_len = settings["seq_len"]
 	shake_amount = settings["shake_amount"]
 	gap_time = settings["gap_time"]
 	show_time = settings["show_time"]
 	grid_size = settings["grid_size"]
+
+
 # get colorRect grid 
 func get_cell(x: int, y: int) -> ColorRect:
 	return grid.get_child(x).get_child(y)
@@ -84,20 +87,16 @@ func gen_sequence():
 
 # show the pattern 
 func show_pattern():
+	await get_tree().create_timer(3.0).timeout
 	can_click = false
-
 	for pos in sequence:
 		var cell = get_cell(pos.x, pos.y)
-
 		cell.modulate = Color.PALE_VIOLET_RED
-
 		await get_tree().create_timer(show_time).timeout
-
 		cell.modulate = Color.WHITE
-
 		await get_tree().create_timer(gap_time).timeout
-
 	can_click = true
+
 
 # create grid for player to click
 func setup_cell():
@@ -108,6 +107,7 @@ func setup_cell():
 
 			if not cell.gui_input.is_connected(callable):
 				cell.gui_input.connect(callable)
+
 
 # handle player input
 func _on_cell_clicked(event: InputEvent, x: int, y: int):
@@ -124,28 +124,44 @@ func _on_cell_clicked(event: InputEvent, x: int, y: int):
 
 
 # check player's pattern
-func check_answer(pos: Vector2i):
+func check_answer(pos: Vector2i) -> void:
 	if player_seq.size() >= sequence.size():
 		return
+
 	var curr_index = player_seq.size()
+
 	if pos == sequence[curr_index]:
 		player_seq.append(pos)
 		print("correct")
-		
+
 		if player_seq.size() == sequence.size():
 			print("you win")
-	else: 
+			minigame_finished.emit(10.0, -8.0)
+			queue_free()
+	else:
 		wrong_click()
-
 
 func wrong_click() -> void:
 	strike += 1
+	player_seq.clear()
+
 	print("Incorrect!")
+
+	if strike > 1:
+		minigame_finished.emit(-10.0, 10.0)
+
+	if strike >= 4:
+		game_lost()
+		return
+
 	print("start again")
 	Global.shake(0.2)
-	#await get_tree().create_timer(4).timeout
-	#gen_sequence()
-	#show_pattern()
-#
-	#if strike >= 3: 
-		#print("you loooseeee")
+	show_pattern()
+
+
+func game_lost() -> void:
+	can_click = false
+	minigame_finished.emit(-15.0, 20.0)
+
+	await get_tree().create_timer(3.0).timeout
+	queue_free()

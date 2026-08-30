@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cvocfoqxp3l3m" path="res://assets/textures/Glossy Cream tiles with white grout_Metallic.png" id="9_vftoq"]
 [ext_resource type="Texture2D" uid="uid://cptl580vee6l4" path="res://assets/textures/Glossy Cream tiles with white grout_Normal.png" id="10_pcfam"]
 [ext_resource type="PackedScene" uid="uid://cgkvoyuujogo3" path="res://systems/dialogue.tscn" id="13_pcfam"]
+[ext_resource type="Texture2D" uid="uid://in06d41urks2" path="res://assets/intro.png" id="15_2ao2h"]
+[ext_resource type="PackedScene" uid="uid://cr0gslrg3g7n5" path="res://systems/UI/meters.tscn" id="16_crhcb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p7del"]
 shader = ExtResource("5_h38m5")
@@ -427,8 +429,10 @@ volumetric_fog_albedo = Color(0.6345012, 0.7366761, 0.7339719, 1)
 script = ExtResource("2_pcfam")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0" unique_id=1731405952]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="0" unique_id=2022341029]
+visible = false
 material = SubResource("ShaderMaterial_p7del")
 anchors_preset = 15
 anchor_right = 1.0
@@ -535,4 +539,21 @@ omni_range = 11.642641
 environment = SubResource("Environment_vftoq")
 camera_attributes = SubResource("CameraAttributesPractical_pcfam")
 
-[node name="dialogue" parent="." index="37" unique_id=1851762449 instance=ExtResource("13_pcfam")]
+[node name="Sprite3D" type="Sprite3D" parent="." index="37" unique_id=1175134070]
+transform = Transform3D(-1.4424758e-08, 0, 0.33, 0, 0.33, 0, -0.33, 0, -1.4424758e-08, 6.8641186, 0.6169075, -1.1012883)
+texture = ExtResource("15_2ao2h")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." index="38" unique_id=251948935]
+transform = Transform3D(-0.12646645, 0, 0.30480528, 0, 0.33, 0, -0.30480528, 0, -0.12646645, 6.9669795, 0.6169075, 0.6346756)
+texture = ExtResource("15_2ao2h")
+
+[node name="Sprite3D3" type="Sprite3D" parent="." index="39" unique_id=585247954]
+transform = Transform3D(0.1012194, 0, 0.31409338, 0, 0.33, 0, -0.31409338, 0, 0.1012194, 6.9669795, 0.6169075, -2.596508)
+texture = ExtResource("15_2ao2h")
+
+[node name="UI" type="CanvasLayer" parent="." index="40" unique_id=324067755]
+
+[node name="meters" parent="UI" index="0" unique_id=1265727905 instance=ExtResource("16_crhcb")]
+mouse_filter = 2
+
+[node name="dialogue" parent="UI" index="1" unique_id=1851762449 instance=ExtResource("13_pcfam")]

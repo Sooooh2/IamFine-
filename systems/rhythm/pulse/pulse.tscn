@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://q7h2l105l0j4"]
 
 [ext_resource type="Script" uid="uid://ckj7xicxi53s0" path="res://systems/rhythm/pulse/pulse.gd" id="1_558oa"]
+[ext_resource type="Texture2D" uid="uid://brc1ytdfgheh8" path="res://assets/pulse.png" id="2_bve36"]
+[ext_resource type="Shader" uid="uid://dxa0nadrvs548" path="res://systems/rhythm/pulse/pulse.gdshader" id="2_lfqep"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hepue"]
+shader = ExtResource("2_lfqep")
+shader_parameter/pulse_color = Color(0.32757697, 0.014765263, 0.18452224, 1)
+shader_parameter/core_size = 0.10000000405148
+shader_parameter/glow_size = 0.22000000975148
+shader_parameter/trail_length = 0.50500002328898
+shader_parameter/trail_width = 0.10300000419398
+shader_parameter/glow_strength = 4.350000206625
 
 [sub_resource type="GDScript" id="GDScript_5psxd"]
 script/source = "extends Area2D
@@ -12,16 +23,18 @@ size = Vector2(40, 40)
 [node name="Pulse" type="Node2D" unique_id=1034337448]
 script = ExtResource("1_558oa")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=642360217]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1012434825]
+texture_filter = 1
+material = SubResource("ShaderMaterial_hepue")
+scale = Vector2(0.295, 0.295)
+texture = ExtResource("2_bve36")
+metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1060139821]
 position = Vector2(-20, -20)
 script = SubResource("GDScript_5psxd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=161214748]
+visible = false
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_kyt04")

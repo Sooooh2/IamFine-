@@ -1,5 +1,9 @@
 extends Control
 
+
+signal minigame_finished(confidence_change: float, anxiety_change: float)
+
+
 # camera
 @onready var cam: Camera2D = $cam
 
@@ -57,7 +61,7 @@ var next_pulse: int = 0
 # register cam in global, set initial difficulties 
 func _ready() -> void:
 	Global.register_cam(cam)
-	set_condition("harder")
+	set_condition("mid")
 
 
 func _process(delta: float) -> void:
@@ -160,13 +164,51 @@ func check_hit() -> void:
 	
 	for area: Area2D in areas:
 		if area.is_in_group("pulse"):
+			minigame_finished.emit(10.0, -8.0)
 			print("GOOD!")
 			Global.shake(0.3)
-	
-			var pulse: Node = area.get_parent()
-			var pulse_follow: Node = pulse.get_parent()
-	
-			pulse_follow.queue_free()
+			
+			var pulse: Node2D = area.get_parent()
+			var pulse_follow: Node2D = pulse.get_parent()
+			var material := pulse.material as ShaderMaterial
+
+			var tween := create_tween()
+			tween.set_parallel(true)
+
+			tween.tween_property(
+				pulse,
+				"scale",
+				pulse.scale * 2.0,
+				0.15
+			)
+
+			tween.tween_method(
+				func(value: Color) -> void:
+					material.set_shader_parameter("pulse_color", value),
+				Color(0.3, 0.7, 1.0, 1.0),
+				Color.WHITE,
+				0.15
+			)
+
+			tween.tween_method(
+				func(value: float) -> void:
+					material.set_shader_parameter("glow_strength", value),
+				2.0,
+				10.0,
+				0.15
+			)
+
+			tween.tween_property(
+				pulse,
+				"modulate:a",
+				0.0,
+				0.15
+			)
+
+			tween.set_parallel(false)
+			tween.tween_callback(pulse_follow.queue_free)
+			
 			return
 	
 	print("MISS!")
+	minigame_finished.emit(-10.0, 10.0)

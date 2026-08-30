@@ -1,51 +1,77 @@
 shader_type canvas_item;
 
-uniform vec4 track_color : source_color = vec4(0.15, 0.2, 0.3, 1.0);
-uniform vec4 glow_color : source_color = vec4(0.3, 0.7, 1.0, 1.0);
+uniform vec4 track_color : source_color = vec4(0.3, 0.7, 1.0, 1.0);
 
-uniform float glow_strength : hint_range(0.0, 5.0) = 1.5;
+uniform float center_transparency : hint_range(0.0, 1.0) = 0.9;
+uniform float edge_width : hint_range(0.01, 0.5) = 0.2;
+uniform float glow_strength : hint_range(0.0, 10.0) = 3.0;
+
+uniform float end_thinness : hint_range(0.01, 0.5) = 0.15;
+
+uniform float wave_count : hint_range(1.0, 50.0) = 10.0;
 uniform float pulse_speed : hint_range(0.0, 5.0) = 1.0;
-uniform float end_thinness : hint_range(0.0, 1.0) = 0.75;
-uniform float glare_strength : hint_range(0.0, 5.0) = 2.0;
-uniform float glare_width : hint_range(0.01, 0.5) = 0.08;
-
 
 void fragment() {
 
-	float end_fade = smoothstep(
+	// Distance from center of track
+	float width = abs(UV.y - 0.5) * 2.0;
+
+	// Brightness toward the sides
+	float edge = smoothstep(
+		1.0 - edge_width,
+		1.0,
+		width
+	);
+
+	// Transparency toward the center
+	float center_fade = smoothstep(
+		0.0,
+		0.7,
+		width
+	);
+
+	float alpha = mix(
+		1.0 - center_transparency,
+		1.0,
+		center_fade
+	);
+
+	// Side glow
+	float glow = pow(edge, 2.0);
+
+	// Wave travels along the LENGTH of the track
+	float wave = sin(
+		UV.x * wave_count * 6.28318
+		- TIME * pulse_speed
+	);
+
+	wave = wave * 0.5 + 0.5;
+
+	// Start/end taper
+	float start_fade = smoothstep(
 		0.0,
 		end_thinness,
 		UV.x
-	) * smoothstep(
+	);
+
+	float end_fade = smoothstep(
 		0.0,
 		end_thinness,
 		1.0 - UV.x
 	);
 
-	float pulse = sin(UV.y * 5.0 - TIME * pulse_speed);
-	pulse = pulse * 0.5 + 1.0;
+	float end_mask = start_fade * end_fade;
 
-	float glare_pos = fract(TIME * pulse_speed * 0.15);
-	float glare = 1.0 - smoothstep(
-		0.0,
-		glare_width,
-		abs(UV.y - glare_pos)
-	);
+	// Apply taper
+	alpha *= end_mask;
 
-	glare *= glare_strength;
+	// Color
+	vec3 color = track_color.rgb;
 
-	vec3 color = mix(
-		track_color.rgb,
-		glow_color.rgb,
-		pulse * 0.25
-	);
+	color += track_color.rgb * glow * glow_strength;
 
-	color += glow_color.rgb * glare;
+	// Subtle moving wave
+	color += track_color.rgb * wave * 0.15;
 
-	color *= 1.0 + pulse * glow_strength * 0.2;
-
-	COLOR = vec4(
-		color,
-		end_fade
-	);
+	COLOR = vec4(color, alpha);
 }
